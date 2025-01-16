@@ -32,3 +32,43 @@ Ovaj projekt se bavi simulacijom i analizom MIMO (Multiple-Input Multiple-Output
 *   **RoF (Radio over Fiber):** Tehnika prijenosa radio signala putem optičkog vlakna.
 *   **Hromatska disperzija (Chromatic Dispersion):** Širenje optičkih impulsa tijekom prijenosa kroz vlakno, ograničava brzinu prijenosa podataka.
 *   **Digitalna obrada signala (DSP):** Obrada signala u digitalnom obliku, koristi se za poboljšanje kvalitete signala i kompenzaciju raznih efekata u komunikacijskom sustavu.
+
+## Simulacija QPSK MIMO sistema
+
+Ovaj Python kod implementira grafičko sučelje (GUI) za simulaciju QPSK (Quadrature Phase-Shift Keying) MIMO (Multiple-Input Multiple-Output) sistema u višemodnom optičkom vlaknu. Koristi biblioteke `tkinter` za GUI, `numpy` za numeričke operacije, `matplotlib` za vizualizaciju i `scipy` za obradu signala.
+
+### Funkcionalnost
+
+1.  **GUI Parametri:**
+    *   Korisnik može postaviti parametre simulacije kao što su broj bita, SNR (omjer signala i šuma), broj predajnih i prijemnih antena, broj modova, dužinu vlakna i koeficijent slabljenja.
+    *   Matrica kanala se može postaviti ručno ili generirati automatski.
+2.  **Simulacija:**
+    *   Generira se niz bitova koji se zatim moduliraju korištenjem QPSK modulacije.
+    *   Simulira se prijenos signala kroz MIMO kanal, uključujući efekte sprezanja modova i disperzije.
+    *   Dodaje se AWGN (Additive White Gaussian Noise) šum na primljeni signal.
+    *   Primjenjuje se MMSE (Minimum Mean Square Error) ekvalizator za poboljšanje kvalitete signala.
+    *   Demoduliraju se primljeni simboli i izračunava se BER (Bit Error Rate).
+3.  **Vizualizacija:**
+    *   Prikazuje se konstelacijski dijagram odašiljanih i primljenih signala.
+    *   Prikazuje se matrica kanala (magnituda i faza).
+    *   Prikazuje se eye dijagram primljenog signala prije i poslije ekvalizacije.
+    *   Prikazuje se utjecaj šuma na signal u vremenskoj domeni.
+    *   Prikazuje se ovisnost BER o SNR i kapaciteta o SNR.
+    *   Prikazuje se slabljenje signala duž vlakna.
+
+### Biblioteke
+
+*   `tkinter`: Za izradu grafičkog korisničkog sučelja.
+*   `numpy`: Za numeričke operacije i manipulaciju matricama.
+*   `matplotlib`: Za vizualizaciju podataka i crtanje grafova.
+*   `scipy`: Za obradu signala i napredne matematičke funkcije.
+
+### Kako koristiti
+
+1.  Pokrenite skriptu `QPSK_MIMO.py`.
+2.  Unesite željene parametre simulacije u GUI.
+3.  Kliknite "Simuliraj" za pokretanje simulacije.
+4.  Pregledajte rezultate i grafove u odgovarajućim tabovima.
+5.  Koristite "Resetuj" za brisanje svih grafova i rezultata.
+6.  Koristite "Pomoć" za detaljnije upute o korištenju simulacije.
+7.  Koristite "Objasni koncept" za detaljnije objašnjenje QPSK MIMO koncepta u višemodnom vlaknu.
