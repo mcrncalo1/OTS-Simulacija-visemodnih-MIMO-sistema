@@ -8,7 +8,7 @@ Ovaj projekat se bavi simulacijom i analizom MIMO (Multiple-Input Multiple-Outpu
 
 ### Gubici u Optičkim Vlaknima
 
-*   **Slabljenje (Attenuation):** Gubitak snage signala tokom prenosa kroz optičko vlakno, mjeren u decibelima (dB).
+*   **Slabljenje (Attenuation):** Gubitak snage signala tokom prijenosa kroz optičko vlakno, mjeren u decibelima (dB).
 *   **Apsorpcija materijala:** Gubitak optičke energije uslijed apsorpcije svjetlosti od strane materijala vlakna.
 *   **Gubici uslijed raspršivanja:** Gubitak snage signala uslijed raspršivanja svjetlosti izvan jezgre vlakna.
 *   **Nelinearni gubici:** Gubici koji se javljaju pri visokim nivoima optičke snage, uključujući stimulirano Ramanovo raspršivanje.
