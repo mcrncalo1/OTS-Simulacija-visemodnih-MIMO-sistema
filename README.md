@@ -65,10 +65,4 @@ Ovaj Python kod implementira grafičko sučelje (GUI) za simulaciju QPSK (Quadra
 
 ### Kako koristiti
 
-1.  Pokrenite skriptu `QPSK_MIMO.py`.
-2.  Unesite željene parametre simulacije u GUI.
-3.  Kliknite "Simuliraj" za pokretanje simulacije.
-4.  Pregledajte rezultate i grafove u odgovarajućim tabovima.
-5.  Koristite "Resetuj" za brisanje svih grafova i rezultata.
-6.  Koristite "Pomoć" za detaljnije upute o korištenju simulacije.
-7.  Koristite "Objasni koncept" za detaljnije objašnjenje QPSK MIMO koncepta u višemodnom vlaknu.
+Za pokretanje simulacije, potrebno je izvršiti skriptu `QPSK_MIMO.py`. Nakon pokretanja, korisnik može unijeti željene parametre simulacije u grafičkom sučelju (GUI). Simulacija se pokreće klikom na gumb "Simuliraj". Rezultati simulacije i grafovi se prikazuju u odgovarajućim tabovima. Za brisanje svih grafova i rezultata, koristi se gumb "Resetuj". Dodatne upute o korištenju simulacije mogu se pronaći klikom na gumb "Pomoć", a detaljnije objašnjenje QPSK MIMO koncepta u višemodnom vlaknu dostupno je klikom na gumb "Objasni koncept".
