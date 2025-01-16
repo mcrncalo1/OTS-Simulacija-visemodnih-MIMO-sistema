@@ -31,3 +31,4 @@ Ovaj projekt se bavi simulacijom i analizom MIMO (Multiple-Input Multiple-Output
 *   **OFDM-PON (Orthogonal Frequency Division Multiplexing Passive Optical Network):** Tehnologija za prijenos podataka putem optičke mreže koja koristi OFDM modulaciju.
 *   **RoF (Radio over Fiber):** Tehnika prijenosa radio signala putem optičkog vlakna.
 *   **Hromatska disperzija (Chromatic Dispersion):** Širenje optičkih impulsa tijekom prijenosa kroz vlakno, ograničava brzinu prijenosa podataka.
+*   **Digitalna obrada signala (DSP):** Obrada signala u digitalnom obliku, koristi se za poboljšanje kvalitete signala i kompenzaciju raznih efekata u komunikacijskom sustavu.
