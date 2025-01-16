@@ -1,0 +1,590 @@
+\doxysection{QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI Class Reference}
+\hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i}{}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+
+
+This class implements the GUI for the QPSK MIMO simulation.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a21e939e2faa7e97aa2587c181a2330ca}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, master)
+\begin{DoxyCompactList}\small\item\em Konstruktor za klasu \doxylink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i}{QPSK\+\_\+\+MIMO\+\_\+\+GUI}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ade8723aac4510c5ed2c9c3b0f205529a}{start\+\_\+simulation}} (self)
+\begin{DoxyCompactList}\small\item\em Pokreće proces simulacije. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a1919252fb090410a6b2465d18c5b57c9}{generate\+\_\+channel\+\_\+matrix}} (self, num\+\_\+tx\+\_\+modes, num\+\_\+rx\+\_\+modes, fiber\+\_\+length, seed=None, coupling\+\_\+coeff=0.\+01, dmd\+\_\+coeff=0.\+001)
+\begin{DoxyCompactList}\small\item\em Generiše matricu kanala. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3c9b8582ecdd6c8aa9119e5ef89d4946}{show\+\_\+help}} (self)
+\begin{DoxyCompactList}\small\item\em Prikazuje prozor za pomoć sa uputama o korištenju simulacije. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acc407c589a552a13c9ee42ce7b305c26}{explain\+\_\+concept}} (self)
+\begin{DoxyCompactList}\small\item\em Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acc407c589a552a13c9ee42ce7b305c26}{explain\+\_\+concept}} (self)
+\begin{DoxyCompactList}\small\item\em Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu. \end{DoxyCompactList}\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8411c3242d3748fc90fd8751a53f550a}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8411c3242d3748fc90fd8751a53f550a} 
+{\bfseries reset\+\_\+simulation} (self)
+\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8411c3242d3748fc90fd8751a53f550a}{reset\+\_\+simulation}} (self)
+\begin{DoxyCompactList}\small\item\em Resetuje simulaciju brisanjem svih grafova i rezultata. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a218c711cc9e1a77100f24cefeb9268a4}{update\+\_\+channel\+\_\+matrix\+\_\+size}} (self, event=None)
+\begin{DoxyCompactList}\small\item\em Ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aed38cf233ca9aecf4ce90b341c3e6705}{simulate}} (self)
+\begin{DoxyCompactList}\small\item\em Izvršava QPSK MIMO simulaciju. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a405ed120e2f7ca6ffe49fb73faf842a9}{create\+\_\+fiber\+\_\+propagation\+\_\+plot}} (self, fiber\+\_\+length, attenuation)
+\begin{DoxyCompactList}\small\item\em Kreira i prikazuje graf propagacije signala kroz vlakno. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a43fb85a56f76a78f0aedd82e0009786d}{show\+\_\+channel\+\_\+matrix\+\_\+popup}} (self)
+\begin{DoxyCompactList}\small\item\em Prikazuje popup prozor sa matricom kanala. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ab3166400b65e6858bac6cc56450c9a56}{create\+\_\+channel\+\_\+matrix\+\_\+entries}} (self, matrix, matrix\+\_\+frame)
+\begin{DoxyCompactList}\small\item\em Kreira i prikazuje unose matrice kanala u popup prozoru. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_addf9d08f2d58dadc18128407a58cca52}{get\+\_\+channel\+\_\+matrix\+\_\+from\+\_\+entries}} (self)
+\begin{DoxyCompactList}\small\item\em Preuzima matricu kanala iz GUI unosa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a31160d40abe928234073bd593a5473a9}{update\+\_\+channel\+\_\+matrix\+\_\+entry\+\_\+state}} (self)
+\begin{DoxyCompactList}\small\item\em Ažurira stanje unosa matrice kanala (samo za čitanje ili uređivanje). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a93c411abd36ebcd90cec59df2135adbe}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a93c411abd36ebcd90cec59df2135adbe} 
+{\bfseries master} = master
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8d1316f96b29a8585657cebb227bd48c}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8d1316f96b29a8585657cebb227bd48c} 
+{\bfseries results\+\_\+frame} = ttk.\+Label\+Frame(master, text="{}Rezultati simulacije"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a4b60f78ecbce40b5cb9bb6a602aa716b}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a4b60f78ecbce40b5cb9bb6a602aa716b} 
+{\bfseries ber\+\_\+label\+\_\+text} = tk.\+String\+Var()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ae7705c0447978036c242e926d1311b6b}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ae7705c0447978036c242e926d1311b6b} 
+{\bfseries ber\+\_\+label} = ttk.\+Label(self.\+results\+\_\+frame, textvariable=self.\+ber\+\_\+label\+\_\+text)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8edb6a9c5081f0052a905e208a9c2c09}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8edb6a9c5081f0052a905e208a9c2c09} 
+{\bfseries snr\+\_\+result\+\_\+label\+\_\+text} = tk.\+String\+Var()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a286036e188243e2de1c5fc504da5cde9}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a286036e188243e2de1c5fc504da5cde9} 
+{\bfseries snr\+\_\+result\+\_\+label} = ttk.\+Label(self.\+results\+\_\+frame, textvariable=self.\+snr\+\_\+result\+\_\+label\+\_\+text)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ae93b230369b7db5a0458b044a83a6cf1}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ae93b230369b7db5a0458b044a83a6cf1} 
+{\bfseries capacity\+\_\+label\+\_\+text} = tk.\+String\+Var()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aac3c805ce4265f98633d317151daea1c}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aac3c805ce4265f98633d317151daea1c} 
+{\bfseries capacity\+\_\+label} = ttk.\+Label(self.\+results\+\_\+frame, textvariable=self.\+capacity\+\_\+label\+\_\+text)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a6a06e06fa0661e0dc46f7c2429801746}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a6a06e06fa0661e0dc46f7c2429801746} 
+{\bfseries input\+\_\+frame} = ttk.\+Label\+Frame(master, text="{}Parametri simulacije"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a009c1cd28a3bf4a07fea8d1661b1ff5e}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a009c1cd28a3bf4a07fea8d1661b1ff5e} 
+{\bfseries num\+\_\+bits\+\_\+label} = ttk.\+Label(self.\+input\+\_\+frame, text="{}Broj bita (100-\/10000)\+:"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aa2ee0be9422fef26cbd95ace61fd9375}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aa2ee0be9422fef26cbd95ace61fd9375} 
+{\bfseries num\+\_\+bits\+\_\+entry} = ttk.\+Entry(self.\+input\+\_\+frame)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aedeb1353cabe16d0c666b7d592fc7a9c}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aedeb1353cabe16d0c666b7d592fc7a9c} 
+{\bfseries snr\+\_\+label} = ttk.\+Label(self.\+input\+\_\+frame, text="{}SNR (dB) (0-\/30)\+:"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3fcd1089405d3463b9dc6398e27ee41f}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3fcd1089405d3463b9dc6398e27ee41f} 
+{\bfseries snr\+\_\+entry} = ttk.\+Entry(self.\+input\+\_\+frame)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_abe9e9022fe694047d6a634b83146f53b}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_abe9e9022fe694047d6a634b83146f53b} 
+{\bfseries num\+\_\+tx\+\_\+ant\+\_\+label} = ttk.\+Label(self.\+input\+\_\+frame, text="{}Broj predajnih antena (1-\/4)\+:"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acb1c36ca2e6e9aaf5c5c5ad159b17504}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acb1c36ca2e6e9aaf5c5c5ad159b17504} 
+{\bfseries num\+\_\+tx\+\_\+ant\+\_\+entry} = ttk.\+Entry(self.\+input\+\_\+frame)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac1560106d4001f44eb902d4dc5db5bbb}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac1560106d4001f44eb902d4dc5db5bbb} 
+{\bfseries update\+\_\+channel\+\_\+matrix\+\_\+size} = 5)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a854e5e5327004a1bb94bec2a1c0f242e}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a854e5e5327004a1bb94bec2a1c0f242e} 
+{\bfseries num\+\_\+rx\+\_\+ant\+\_\+label} = ttk.\+Label(self.\+input\+\_\+frame, text="{}Broj prijemnih antena (1-\/4)\+:"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a28f6b1dcf69138091a2882024b6e3a35}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a28f6b1dcf69138091a2882024b6e3a35} 
+{\bfseries num\+\_\+rx\+\_\+ant\+\_\+entry} = ttk.\+Entry(self.\+input\+\_\+frame)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aac92056fbbe167e4c7b810e9e9958ef2}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aac92056fbbe167e4c7b810e9e9958ef2} 
+{\bfseries num\+\_\+modes\+\_\+label} = ttk.\+Label(self.\+input\+\_\+frame, text="{}Broj modova (1-\/4)\+:"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad02c1b1e32e560a0416639a3244e232c}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad02c1b1e32e560a0416639a3244e232c} 
+{\bfseries num\+\_\+modes\+\_\+entry} = ttk.\+Entry(self.\+input\+\_\+frame)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_adf91de9770c45bd92f6453f4211da944}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_adf91de9770c45bd92f6453f4211da944} 
+{\bfseries channel\+\_\+label} = ttk.\+Label(self.\+input\+\_\+frame, text="{}Matrica kanala (H)\+:"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a768b1ca6cf36c8c31523436206bcb025}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a768b1ca6cf36c8c31523436206bcb025} 
+{\bfseries channel\+\_\+matrix\+\_\+button} = ttk.\+Button(self.\+input\+\_\+frame, text="{}Info"{}, command=self.\+show\+\_\+channel\+\_\+matrix\+\_\+popup)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aa3fbc1794e9f98f5ffba2403dd0371ee}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aa3fbc1794e9f98f5ffba2403dd0371ee} 
+list {\bfseries channel\+\_\+matrix\+\_\+entries} = \mbox{[}$\,$\mbox{]}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad757fd6861bff2a6e6751eef8c71cc70}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad757fd6861bff2a6e6751eef8c71cc70} 
+bool {\bfseries channel\+\_\+matrix\+\_\+entry\+\_\+readonly} = True
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a05e671ca7d0537f65eea6ea23fc44d7c}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a05e671ca7d0537f65eea6ea23fc44d7c} 
+{\bfseries fiber\+\_\+length\+\_\+label} = ttk.\+Label(self.\+input\+\_\+frame, text="{}Dužina vlakna (km) (1-\/1000)\+:"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a956907096c6aad321f7a78a797874bda}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a956907096c6aad321f7a78a797874bda} 
+{\bfseries fiber\+\_\+length\+\_\+entry} = ttk.\+Entry(self.\+input\+\_\+frame)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a986335b26c1e2fbc32254e1cb8eb1df2}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a986335b26c1e2fbc32254e1cb8eb1df2} 
+{\bfseries attenuation\+\_\+label} = ttk.\+Label(self.\+input\+\_\+frame, text="{}Koef. slabljenja (dB/km) (0.\+1-\/1)\+:"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_af7fbcabbb29532e77b5250ad621597c9}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_af7fbcabbb29532e77b5250ad621597c9} 
+{\bfseries attenuation\+\_\+entry} = ttk.\+Entry(self.\+input\+\_\+frame)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a6081379ddcda4f047458c161f8cb6842}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a6081379ddcda4f047458c161f8cb6842} 
+{\bfseries explain\+\_\+button} = ttk.\+Button(master, text="{}Objasni koncept"{}, command=self.\+explain\+\_\+concept)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a0dcadfc60ecf41d16b8457770311399e}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a0dcadfc60ecf41d16b8457770311399e} 
+{\bfseries help\+\_\+button} = ttk.\+Button(master, text="{}Pomoć"{}, command=self.\+show\+\_\+help)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_af75fede20b6078463539320d9de54e2e}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_af75fede20b6078463539320d9de54e2e} 
+{\bfseries simulate\+\_\+button} = ttk.\+Button(master, text="{}Simuliraj"{}, command=self.\+start\+\_\+simulation)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acb951fe8c430e0c377f269a5559843e0}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acb951fe8c430e0c377f269a5559843e0} 
+{\bfseries reset\+\_\+button} = ttk.\+Button(master, text="{}Resetuj"{}, command=self.\+reset\+\_\+simulation)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aae43b9d4f6cd578d58c6826e07684157}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aae43b9d4f6cd578d58c6826e07684157} 
+{\bfseries notebook} = ttk.\+Notebook(master)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_af4b1873e51edd0d197acb380c828bdee}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_af4b1873e51edd0d197acb380c828bdee} 
+{\bfseries tx\+\_\+signal\+\_\+tab} = ttk.\+Frame(self.\+notebook)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a7053da62b066afceb252e3064828a621}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a7053da62b066afceb252e3064828a621} 
+{\bfseries tx\+\_\+signal\+\_\+figure} = "{}Odašiljani signal"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac53f9880f30dee1d61f0ca8858ebd267}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac53f9880f30dee1d61f0ca8858ebd267} 
+{\bfseries tx\+\_\+signal\+\_\+ax}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9febd8ba07383ab6ab95de7eba20a855}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9febd8ba07383ab6ab95de7eba20a855} 
+{\bfseries tx\+\_\+signal\+\_\+time\+\_\+ax}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a454e7705dec3ee09a27e7857f062815c}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a454e7705dec3ee09a27e7857f062815c} 
+{\bfseries tx\+\_\+signal\+\_\+canvas} = Figure\+Canvas\+Tk\+Agg(self.\+tx\+\_\+signal\+\_\+figure, master=self.\+tx\+\_\+signal\+\_\+tab)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a0178ef666623177e87bf952594ba0758}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a0178ef666623177e87bf952594ba0758} 
+{\bfseries tx\+\_\+signal\+\_\+canvas\+\_\+widget} = self.\+tx\+\_\+signal\+\_\+canvas.\+get\+\_\+tk\+\_\+widget()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_afff6f98e9a8d613f814019d8fe5be56b}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_afff6f98e9a8d613f814019d8fe5be56b} 
+{\bfseries constellation\+\_\+tab} = ttk.\+Frame(self.\+notebook)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a6dd0870b7b3bcba4a6fae668c7ade2d7}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a6dd0870b7b3bcba4a6fae668c7ade2d7} 
+{\bfseries constellation\+\_\+figure} = "{}Konstelacija"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aff148440312310f15c0176b968b96c94}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aff148440312310f15c0176b968b96c94} 
+{\bfseries constellation\+\_\+ax} = plt.\+subplots()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aecf713cd0c17eb8e0624784e3345db7a}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aecf713cd0c17eb8e0624784e3345db7a} 
+{\bfseries constellation\+\_\+canvas} = Figure\+Canvas\+Tk\+Agg(self.\+constellation\+\_\+figure, master=self.\+constellation\+\_\+tab)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac1156075115efb1b099975b5ed1b3960}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac1156075115efb1b099975b5ed1b3960} 
+{\bfseries constellation\+\_\+canvas\+\_\+widget} = self.\+constellation\+\_\+canvas.\+get\+\_\+tk\+\_\+widget()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_addd1a6828fd6a2400dd0927bb095b8ce}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_addd1a6828fd6a2400dd0927bb095b8ce} 
+{\bfseries channel\+\_\+tab} = ttk.\+Frame(self.\+notebook)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a0bdd441d068372b0d3950634f0934a52}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a0bdd441d068372b0d3950634f0934a52} 
+{\bfseries channel\+\_\+figure} = "{}Matrica kanala"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a4d556178f0c1712d7f91d4db33a6ca8d}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a4d556178f0c1712d7f91d4db33a6ca8d} 
+{\bfseries channel\+\_\+ax\+\_\+mag}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aacfb2952ac1d647542310a0230f8e6da}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aacfb2952ac1d647542310a0230f8e6da} 
+{\bfseries channel\+\_\+ax\+\_\+phase}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a6b60e4aa4d6f5a2441268e1e94bc6caa}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a6b60e4aa4d6f5a2441268e1e94bc6caa} 
+{\bfseries channel\+\_\+canvas} = Figure\+Canvas\+Tk\+Agg(self.\+channel\+\_\+figure, master=self.\+channel\+\_\+tab)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aeede69a0fcc2d20240c6fa8e83b974a6}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aeede69a0fcc2d20240c6fa8e83b974a6} 
+{\bfseries channel\+\_\+canvas\+\_\+widget} = self.\+channel\+\_\+canvas.\+get\+\_\+tk\+\_\+widget()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a432c172990a8ab7947ba7831037fe57b}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a432c172990a8ab7947ba7831037fe57b} 
+{\bfseries eye\+\_\+diagram\+\_\+tab} = ttk.\+Frame(self.\+notebook)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a76aefea10376800b73b4c9bda382f582}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a76aefea10376800b73b4c9bda382f582} 
+{\bfseries eye\+\_\+diagram\+\_\+figure} = "{}Eye Dijagram"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a67f39e251dc74527f1aa4c4defe58043}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a67f39e251dc74527f1aa4c4defe58043} 
+{\bfseries eye\+\_\+diagram\+\_\+ax\+\_\+before}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a13d1ed422e3498da67cf261f47c82cf0}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a13d1ed422e3498da67cf261f47c82cf0} 
+{\bfseries eye\+\_\+diagram\+\_\+ax\+\_\+after}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_abb42109fc43e172acb70f7f65bb80cbb}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_abb42109fc43e172acb70f7f65bb80cbb} 
+{\bfseries eye\+\_\+diagram\+\_\+canvas} = Figure\+Canvas\+Tk\+Agg(self.\+eye\+\_\+diagram\+\_\+figure, master=self.\+eye\+\_\+diagram\+\_\+tab)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9cf828dbc4d5336388f3eab548837858}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9cf828dbc4d5336388f3eab548837858} 
+{\bfseries eye\+\_\+diagram\+\_\+canvas\+\_\+widget} = self.\+eye\+\_\+diagram\+\_\+canvas.\+get\+\_\+tk\+\_\+widget()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acf14c9373964a6c22e2d619c4715c1ba}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acf14c9373964a6c22e2d619c4715c1ba} 
+{\bfseries noise\+\_\+impact\+\_\+tab} = ttk.\+Frame(self.\+notebook)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aa5301ed5ddeb847e0ae435cf34c7c6c8}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aa5301ed5ddeb847e0ae435cf34c7c6c8} 
+{\bfseries noise\+\_\+impact\+\_\+figure} = "{}Utjecaj šuma na signal"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_abe558dc6043dec61176004c031ae6b32}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_abe558dc6043dec61176004c031ae6b32} 
+{\bfseries noise\+\_\+impact\+\_\+ax\+\_\+real}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ade146a4c17e30bcee5f5359092bb6c46}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ade146a4c17e30bcee5f5359092bb6c46} 
+{\bfseries noise\+\_\+impact\+\_\+ax\+\_\+imag}
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ae16d34f3d2434be1f99af6e69c0dbaeb}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ae16d34f3d2434be1f99af6e69c0dbaeb} 
+{\bfseries noise\+\_\+impact\+\_\+canvas} = Figure\+Canvas\+Tk\+Agg(self.\+noise\+\_\+impact\+\_\+figure, master=self.\+noise\+\_\+impact\+\_\+tab)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_afed340223c64facf3b71b5e92e164b7e}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_afed340223c64facf3b71b5e92e164b7e} 
+{\bfseries noise\+\_\+impact\+\_\+canvas\+\_\+widget} = self.\+noise\+\_\+impact\+\_\+canvas.\+get\+\_\+tk\+\_\+widget()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a1aec8eef26649d2cfa15f54c869419cf}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a1aec8eef26649d2cfa15f54c869419cf} 
+{\bfseries snr\+\_\+ber\+\_\+tab} = ttk.\+Frame(self.\+notebook)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9da6b96313e21c3f5afccfc40e26ebdd}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9da6b96313e21c3f5afccfc40e26ebdd} 
+{\bfseries snr\+\_\+ber\+\_\+figure} = "{}SNR vs BER"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a969799571d7418161dfddf4462659cb2}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a969799571d7418161dfddf4462659cb2} 
+{\bfseries snr\+\_\+ber\+\_\+ax} = plt.\+subplots()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad1c45f96f70a746d5f6918cba4c86ea2}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad1c45f96f70a746d5f6918cba4c86ea2} 
+{\bfseries snr\+\_\+ber\+\_\+canvas} = Figure\+Canvas\+Tk\+Agg(self.\+snr\+\_\+ber\+\_\+figure, master=self.\+snr\+\_\+ber\+\_\+tab)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_abb07b2fb555a6d8026865b1dbc574502}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_abb07b2fb555a6d8026865b1dbc574502} 
+{\bfseries snr\+\_\+ber\+\_\+canvas\+\_\+widget} = self.\+snr\+\_\+ber\+\_\+canvas.\+get\+\_\+tk\+\_\+widget()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a1cd501d15e59bc3588e9b6684e215b4a}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a1cd501d15e59bc3588e9b6684e215b4a} 
+{\bfseries snr\+\_\+capacity\+\_\+tab} = ttk.\+Frame(self.\+notebook)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acf4453de0fe0ec9c6ee4440217ad526c}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acf4453de0fe0ec9c6ee4440217ad526c} 
+{\bfseries snr\+\_\+capacity\+\_\+figure} = "{}SNR vs Kapacitet"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9013d145553dba02c0955da0c259e196}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9013d145553dba02c0955da0c259e196} 
+{\bfseries snr\+\_\+capacity\+\_\+ax} = plt.\+subplots()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aff932079288164a7a3a0f0486b9fb4c7}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aff932079288164a7a3a0f0486b9fb4c7} 
+{\bfseries snr\+\_\+capacity\+\_\+canvas} = Figure\+Canvas\+Tk\+Agg(self.\+snr\+\_\+capacity\+\_\+figure, master=self.\+snr\+\_\+capacity\+\_\+tab)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac71d2b9859772a83d5c74da10a7a697c}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac71d2b9859772a83d5c74da10a7a697c} 
+{\bfseries snr\+\_\+capacity\+\_\+canvas\+\_\+widget} = self.\+snr\+\_\+capacity\+\_\+canvas.\+get\+\_\+tk\+\_\+widget()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3dfa8bf7774e80b7051679491d70e6e6}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3dfa8bf7774e80b7051679491d70e6e6} 
+{\bfseries detailed\+\_\+fiber\+\_\+tab} = ttk.\+Frame(self.\+notebook)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a057eabe92c7b32091c69bbc03ba7a9e1}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a057eabe92c7b32091c69bbc03ba7a9e1} 
+{\bfseries detailed\+\_\+fiber\+\_\+figure} = "{}Detaljni prikaz vlakna"{})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_af4a161e89a7bfa63dcf3bbdc43ee705f}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_af4a161e89a7bfa63dcf3bbdc43ee705f} 
+{\bfseries detailed\+\_\+fiber\+\_\+ax} = plt.\+subplots()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a17575023ff55db73b61ce3b7a5f3e8d2}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a17575023ff55db73b61ce3b7a5f3e8d2} 
+{\bfseries detailed\+\_\+fiber\+\_\+canvas} = Figure\+Canvas\+Tk\+Agg(self.\+detailed\+\_\+fiber\+\_\+figure, master=self.\+detailed\+\_\+fiber\+\_\+tab)
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a0cad1ecfbcf509b535d4e2bc285a9010}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a0cad1ecfbcf509b535d4e2bc285a9010} 
+{\bfseries detailed\+\_\+fiber\+\_\+canvas\+\_\+widget} = self.\+detailed\+\_\+fiber\+\_\+canvas.\+get\+\_\+tk\+\_\+widget()
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad2672bc3febba6f4d3e50a9284ccfd04}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad2672bc3febba6f4d3e50a9284ccfd04} 
+bool {\bfseries channel\+\_\+matrix\+\_\+displayed} = False
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9cb323dad6f4f2359eb5f1b76a205bc8}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a9cb323dad6f4f2359eb5f1b76a205bc8} 
+{\bfseries fiber\+\_\+propagation\+\_\+ax} = None
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a348527455676a2d731a22f80a29f9c94}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a348527455676a2d731a22f80a29f9c94} 
+{\bfseries fiber\+\_\+propagation\+\_\+canvas} = None
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3f266a5652ab5090641072190e2a6b57}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3f266a5652ab5090641072190e2a6b57} 
+{\bfseries received\+\_\+symbols} = np.\+array(\mbox{[}$\,$\mbox{]})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac6e459bfdab90f28e89c6f4cf9ae78a3}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ac6e459bfdab90f28e89c6f4cf9ae78a3} 
+{\bfseries equalized\+\_\+symbols} = np.\+array(\mbox{[}$\,$\mbox{]})
+\item 
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad5964ce1be3febaf1e483d7a87d5527e}\label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ad5964ce1be3febaf1e483d7a87d5527e} 
+{\bfseries channel\+\_\+matrix\+\_\+popup} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements the GUI for the QPSK MIMO simulation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a21e939e2faa7e97aa2587c181a2330ca}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a21e939e2faa7e97aa2587c181a2330ca} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{master}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor za klasu \doxylink{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i}{QPSK\+\_\+\+MIMO\+\_\+\+GUI}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Roditeljski prozor.\\
+\hline
+\end{DoxyParams}
+Inicijalizira glavni prozor i sve GUI elemente za QPSK MIMO simulaciju.
+
+\begin{DoxyVerb}@brief Konstruktor za klasu QPSK_MIMO_GUI.
+
+@param master Roditeljski prozor.
+@details Inicijalizira glavni prozor i sve GUI elemente za QPSK MIMO simulaciju.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ab3166400b65e6858bac6cc56450c9a56}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!create\_channel\_matrix\_entries@{create\_channel\_matrix\_entries}}
+\index{create\_channel\_matrix\_entries@{create\_channel\_matrix\_entries}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{create\_channel\_matrix\_entries()}{create\_channel\_matrix\_entries()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ab3166400b65e6858bac6cc56450c9a56} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+create\+\_\+channel\+\_\+matrix\+\_\+entries (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{matrix}{, }\item[{}]{matrix\+\_\+frame}{}\end{DoxyParamCaption})}
+
+
+
+Kreira i prikazuje unose matrice kanala u popup prozoru. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Matrica kanala za prikaz. \\
+\hline
+{\em matrix\+\_\+frame} & Okvir u kojem se prikazuju unosi matrice.\\
+\hline
+\end{DoxyParams}
+Ova metoda kreira i prikazuje unose matrice kanala u popup prozoru, na osnovu date matrice i okvira.
+
+\begin{DoxyVerb}@brief Kreira i prikazuje unose matrice kanala u popup prozoru.
+
+@param matrix Matrica kanala za prikaz.
+@param matrix_frame Okvir u kojem se prikazuju unosi matrice.
+@details Ova metoda kreira i prikazuje unose matrice kanala u popup prozoru, na osnovu date matrice i okvira.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a405ed120e2f7ca6ffe49fb73faf842a9}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!create\_fiber\_propagation\_plot@{create\_fiber\_propagation\_plot}}
+\index{create\_fiber\_propagation\_plot@{create\_fiber\_propagation\_plot}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{create\_fiber\_propagation\_plot()}{create\_fiber\_propagation\_plot()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a405ed120e2f7ca6ffe49fb73faf842a9} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+create\+\_\+fiber\+\_\+propagation\+\_\+plot (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{fiber\+\_\+length}{, }\item[{}]{attenuation}{}\end{DoxyParamCaption})}
+
+
+
+Kreira i prikazuje graf propagacije signala kroz vlakno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fiber\+\_\+length} & Dužina vlakna u km. \\
+\hline
+{\em attenuation} & Slabljenje vlakna u d\+B/km.\\
+\hline
+\end{DoxyParams}
+Ova metoda kreira i prikazuje graf koji pokazuje snagu signala duž vlakna.
+
+\begin{DoxyVerb}@brief Kreira i prikazuje graf propagacije signala kroz vlakno.
+
+@param fiber_length Dužina vlakna u km.
+@param attenuation Slabljenje vlakna u dB/km.
+@details Ova metoda kreira i prikazuje graf koji pokazuje snagu signala duž vlakna.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acc407c589a552a13c9ee42ce7b305c26}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!explain\_concept@{explain\_concept}}
+\index{explain\_concept@{explain\_concept}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{explain\_concept()}{explain\_concept()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acc407c589a552a13c9ee42ce7b305c26} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+explain\+\_\+concept (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu. 
+
+Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
+
+\begin{DoxyVerb}@brief Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu.
+
+@details Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acc407c589a552a13c9ee42ce7b305c26}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!explain\_concept@{explain\_concept}}
+\index{explain\_concept@{explain\_concept}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{explain\_concept()}{explain\_concept()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_acc407c589a552a13c9ee42ce7b305c26} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+explain\+\_\+concept (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu. 
+
+Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
+
+\begin{DoxyVerb}@brief Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu.
+
+@details Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a1919252fb090410a6b2465d18c5b57c9}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!generate\_channel\_matrix@{generate\_channel\_matrix}}
+\index{generate\_channel\_matrix@{generate\_channel\_matrix}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{generate\_channel\_matrix()}{generate\_channel\_matrix()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a1919252fb090410a6b2465d18c5b57c9} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+generate\+\_\+channel\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{num\+\_\+tx\+\_\+modes}{, }\item[{}]{num\+\_\+rx\+\_\+modes}{, }\item[{}]{fiber\+\_\+length}{, }\item[{}]{seed}{ = {\ttfamily None}, }\item[{}]{coupling\+\_\+coeff}{ = {\ttfamily 0.01}, }\item[{}]{dmd\+\_\+coeff}{ = {\ttfamily 0.001}}\end{DoxyParamCaption})}
+
+
+
+Generiše matricu kanala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+tx\+\_\+modes} & Broj predajnih modova. \\
+\hline
+{\em num\+\_\+rx\+\_\+modes} & Broj prijemnih modova. \\
+\hline
+{\em fiber\+\_\+length} & Dužina vlakna u km. \\
+\hline
+{\em seed} & Slučajni seed za ponovljivost. \\
+\hline
+{\em coupling\+\_\+coeff} & Koeficijent sprezanja. \\
+\hline
+{\em dmd\+\_\+coeff} & Koeficijent diferencijalnog kašnjenja moda. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Generisana matrica kanala.
+\end{DoxyReturn}
+Ova metoda generiše matricu kanala na osnovu broja predajnih i prijemnih modova, dužine vlakna i ostalih parametara.
+
+\begin{DoxyVerb}@brief Generiše matricu kanala.
+
+@param num_tx_modes Broj predajnih modova.
+@param num_rx_modes Broj prijemnih modova.
+@param fiber_length Dužina vlakna u km.
+@param seed Slučajni seed za ponovljivost.
+@param coupling_coeff Koeficijent sprezanja.
+@param dmd_coeff Koeficijent diferencijalnog kašnjenja moda.
+@return Generisana matrica kanala.
+@details Ova metoda generiše matricu kanala na osnovu broja predajnih i prijemnih modova, dužine vlakna i ostalih parametara.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_addf9d08f2d58dadc18128407a58cca52}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!get\_channel\_matrix\_from\_entries@{get\_channel\_matrix\_from\_entries}}
+\index{get\_channel\_matrix\_from\_entries@{get\_channel\_matrix\_from\_entries}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{get\_channel\_matrix\_from\_entries()}{get\_channel\_matrix\_from\_entries()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_addf9d08f2d58dadc18128407a58cca52} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+get\+\_\+channel\+\_\+matrix\+\_\+from\+\_\+entries (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Preuzima matricu kanala iz GUI unosa. 
+
+\begin{DoxyReturn}{Returns}
+Matrica kanala kao Num\+Py niz, ili None ako dođe do greške.
+\end{DoxyReturn}
+Ova metoda preuzima matricu kanala iz GUI unosa i vraća je kao Num\+Py niz.
+
+\begin{DoxyVerb}@brief Preuzima matricu kanala iz GUI unosa.
+
+@return Matrica kanala kao NumPy niz, ili None ako dođe do greške.
+@details Ova metoda preuzima matricu kanala iz GUI unosa i vraća je kao NumPy niz.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8411c3242d3748fc90fd8751a53f550a}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!reset\_simulation@{reset\_simulation}}
+\index{reset\_simulation@{reset\_simulation}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{reset\_simulation()}{reset\_simulation()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a8411c3242d3748fc90fd8751a53f550a} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+reset\+\_\+simulation (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Resetuje simulaciju brisanjem svih grafova i rezultata. 
+
+Ova metoda briše sve grafove i resetuje labele rezultata na njihova početna stanja.
+
+\begin{DoxyVerb}@brief Resetuje simulaciju brisanjem svih grafova i rezultata.
+
+@details Ova metoda briše sve grafove i resetuje labele rezultata na njihova početna stanja.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a43fb85a56f76a78f0aedd82e0009786d}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!show\_channel\_matrix\_popup@{show\_channel\_matrix\_popup}}
+\index{show\_channel\_matrix\_popup@{show\_channel\_matrix\_popup}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{show\_channel\_matrix\_popup()}{show\_channel\_matrix\_popup()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a43fb85a56f76a78f0aedd82e0009786d} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+show\+\_\+channel\+\_\+matrix\+\_\+popup (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Prikazuje popup prozor sa matricom kanala. 
+
+Ova metoda kreira i prikazuje popup prozor koji sadrži unose matrice kanala.
+
+\begin{DoxyVerb}@brief Prikazuje popup prozor sa matricom kanala.
+
+@details Ova metoda kreira i prikazuje popup prozor koji sadrži unose matrice kanala.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3c9b8582ecdd6c8aa9119e5ef89d4946}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!show\_help@{show\_help}}
+\index{show\_help@{show\_help}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{show\_help()}{show\_help()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a3c9b8582ecdd6c8aa9119e5ef89d4946} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+show\+\_\+help (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Prikazuje prozor za pomoć sa uputama o korištenju simulacije. 
+
+Ova metoda kreira i prikazuje prozor za pomoć sa uputama o korištenju simulacije.
+
+\begin{DoxyVerb}@brief Prikazuje prozor za pomoć sa uputama o korištenju simulacije.
+
+@details Ova metoda kreira i prikazuje prozor za pomoć sa uputama o korištenju simulacije.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aed38cf233ca9aecf4ce90b341c3e6705}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!simulate@{simulate}}
+\index{simulate@{simulate}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{simulate()}{simulate()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_aed38cf233ca9aecf4ce90b341c3e6705} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+simulate (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Izvršava QPSK MIMO simulaciju. 
+
+Ova metoda preuzima parametre simulacije iz GUI, izvršava simulaciju i ažurira GUI sa rezultatima.
+
+\begin{DoxyVerb}@brief Izvršava QPSK MIMO simulaciju.
+
+@details Ova metoda preuzima parametre simulacije iz GUI, izvršava simulaciju i ažurira GUI sa rezultatima.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ade8723aac4510c5ed2c9c3b0f205529a}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!start\_simulation@{start\_simulation}}
+\index{start\_simulation@{start\_simulation}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{start\_simulation()}{start\_simulation()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_ade8723aac4510c5ed2c9c3b0f205529a} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+start\+\_\+simulation (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Pokreće proces simulacije. 
+
+Ova metoda inicira simulaciju postavljanjem unosa matrice kanala na uređivanje i pozivanjem metode simulacije.
+
+\begin{DoxyVerb}@brief Pokreće proces simulacije.
+
+@details Ova metoda pokreće simulaciju postavljanjem unosa matrice kanala na uređivanje i pozivanjem metode simulacije.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a31160d40abe928234073bd593a5473a9}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!update\_channel\_matrix\_entry\_state@{update\_channel\_matrix\_entry\_state}}
+\index{update\_channel\_matrix\_entry\_state@{update\_channel\_matrix\_entry\_state}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{update\_channel\_matrix\_entry\_state()}{update\_channel\_matrix\_entry\_state()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a31160d40abe928234073bd593a5473a9} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+update\+\_\+channel\+\_\+matrix\+\_\+entry\+\_\+state (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Ažurira stanje unosa matrice kanala (samo za čitanje ili uređivanje). 
+
+Ova metoda ažurira stanje unosa matrice kanala na osnovu zastavice {\ttfamily channel\+\_\+matrix\+\_\+entry\+\_\+readonly}. Ako je {\ttfamily channel\+\_\+matrix\+\_\+entry\+\_\+readonly} True, unosi su postavljeni samo za čitanje, inače su postavljeni za uređivanje.
+
+\begin{DoxyVerb}@brief Ažurira stanje unosa matrice kanala (samo za čitanje ili uređivanje).
+
+@details Ova metoda ažurira stanje unosa matrice kanala na osnovu zastavice `channel_matrix_entry_readonly`. Ako je `channel_matrix_entry_readonly` True, unosi su postavljeni samo za čitanje, inače su postavljeni za uređivanje.
+\end{DoxyVerb}
+ \Hypertarget{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a218c711cc9e1a77100f24cefeb9268a4}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!update\_channel\_matrix\_size@{update\_channel\_matrix\_size}}
+\index{update\_channel\_matrix\_size@{update\_channel\_matrix\_size}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{update\_channel\_matrix\_size()}{update\_channel\_matrix\_size()}}
+{\footnotesize\ttfamily \label{class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i_a218c711cc9e1a77100f24cefeb9268a4} 
+QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+update\+\_\+channel\+\_\+matrix\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{event}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+
+
+Ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Događaj koji je pokrenuo ažuriranje.\\
+\hline
+\end{DoxyParams}
+Ova metoda ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena unesenih u GUI.
+
+\begin{DoxyVerb}@brief Ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena.
+
+@param event Događaj koji je pokrenuo ažuriranje.
+@details Ova metoda ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena unesenih u GUI.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Kodovi/QPSK\+\_\+\+MIMO.\+py\end{DoxyCompactItemize}
