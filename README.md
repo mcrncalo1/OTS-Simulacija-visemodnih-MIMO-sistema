@@ -6,7 +6,7 @@ Ovaj projekt se bavi simulacijom i analizom MIMO (Multiple-Input Multiple-Output
 
 ## Ključni Pojmovi
 
-### Gubitci u Optičkim Vlaknima
+### Gubici u Optičkim Vlaknima
 
 *   **Slabljenje (Attenuation):** Gubitak snage signala tokom prenosa kroz optičko vlakno, mjeren u decibelima (dB).
 *   **Apsorpcija materijala:** Gubitak optičke energije uslijed apsorpcije svjetlosti od strane materijala vlakna.
