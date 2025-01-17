@@ -1,7 +1,10 @@
 var annotated_dup =
 [
     [ "QPSK_MIMO", null, [
-      [ "QPSK_MIMO_GUI", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i" ],
-      [ "ToolTip", "class_q_p_s_k___m_i_m_o_1_1_tool_tip.html", "class_q_p_s_k___m_i_m_o_1_1_tool_tip" ]
+      [ "QPSK_MIMO_GUI", "classQPSK__MIMO_1_1QPSK__MIMO__GUI.html", "classQPSK__MIMO_1_1QPSK__MIMO__GUI" ],
+      [ "ToolTip", "classQPSK__MIMO_1_1ToolTip.html", "classQPSK__MIMO_1_1ToolTip" ]
+    ] ],
+    [ "QPSK_MIMO_test", null, [
+      [ "TestQPSK_MIMO", "classQPSK__MIMO__test_1_1TestQPSK__MIMO.html", "classQPSK__MIMO__test_1_1TestQPSK__MIMO" ]
     ] ]
 ];
