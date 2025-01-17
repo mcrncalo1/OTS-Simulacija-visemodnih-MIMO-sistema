@@ -25,7 +25,19 @@
 var NAVTREE =
 [
   [ "Optički telekomunikacijski sistemi - Analiza i dizajn MIMO sistema zasnovanih na vlaknima sa više modova", "index.html", [
-    [ "Optički telekomunikacijski sistemi - Simulacija i analiza MIMO sistema zasnovanih na vlaknima s više modova", "md_README.html", null ],
+    [ "Optički telekomunikacijski sistemi - Simulacija i analiza MIMO sistema zasnovanih na vlaknima s više modova", "md__r_e_a_d_m_e.html", [
+      [ "Uvod", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Ključni Pojmovi", "md__r_e_a_d_m_e.html#autotoc_md2", [
+        [ "Gubici u Optičkim Vlaknima", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+        [ "MIMO Sistemi", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+        [ "Obrada Signala i Mreže", "md__r_e_a_d_m_e.html#autotoc_md5", null ]
+      ] ],
+      [ "Simulacija QPSK MIMO sistema", "md__r_e_a_d_m_e.html#autotoc_md6", [
+        [ "Funkcionalnost", "md__r_e_a_d_m_e.html#autotoc_md7", null ],
+        [ "Biblioteke", "md__r_e_a_d_m_e.html#autotoc_md8", null ],
+        [ "Kako koristiti", "md__r_e_a_d_m_e.html#autotoc_md9", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -44,5 +56,5 @@ var NAVTREEINDEX =
 "annotated.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';

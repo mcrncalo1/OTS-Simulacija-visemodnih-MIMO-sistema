@@ -2,3 +2,67 @@
 \hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Optički telekomunikacijski sistemi -\/ Simulacija i analiza MIMO sistema zasnovanih na vlaknima s više modova@{Optički telekomunikacijski sistemi -\/ Simulacija i analiza MIMO sistema zasnovanih na vlaknima s više modova}}
 \label{md__r_e_a_d_m_e_autotoc_md0}%
 \Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Uvod}{Uvod}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Ovaj projekat se bavi simulacijom i analizom MIMO (Multiple-\/\+Input Multiple-\/\+Output) sistema u optičkim telekomunikacijama, s posebnim fokusom na primjenu u vlaknima s više modova (FMF). Cilj je istražiti kako se MIMO tehnologije mogu koristiti za povećanje kapaciteta i pouzdanosti optičkih komunikacijskih sistema.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{Ključni Pojmovi}{Ključni Pojmovi}}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{Gubici u Optičkim Vlaknima}{Gubici u Optičkim Vlaknima}}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{Slabljenje (Attenuation)\+:}} Gubitak snage signala tokom prijenosa kroz optičko vlakno, mjeren u decibelima (dB).
+\item {\bfseries{Apsorpcija materijala\+:}} Gubitak optičke energije uslijed apsorpcije svjetlosti od strane materijala vlakna.
+\item {\bfseries{Gubici uslijed raspršivanja\+:}} Gubitak snage signala uslijed raspršivanja svjetlosti izvan jezgre vlakna.
+\item {\bfseries{Nelinearni gubici\+:}} Gubici koji se javljaju pri visokim nivoima optičke snage, uključujući stimulirano Ramanovo raspršivanje.
+\item {\bfseries{Gubici uslijed savijanja\+:}} Gubitak snage signala uslijed savijanja optičkog vlakna.
+\item {\bfseries{Gubici uslijed spajanja modova\+:}} Gubitak snage uslijed prijenosa energije između različitih modova u vlaknu.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{MIMO Sistemi}{MIMO Sistemi}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{MIMO (Multiple-\/\+Input Multiple-\/\+Output)\+:}} Tehnologija koja koristi više antena za prijenos i prijem signala, povećavajući kapacitet i pouzdanost komunikacije.
+\item {\bfseries{BER (Bit Error Rate)\+:}} Stopa grešaka u bitovima, mjera kvalitete prijenosa podataka.
+\item {\bfseries{Prostorno multipleksiranje (Spatial Multiplexing)\+:}} Tehnika koja omogućava istovremeni prijenos više tokova podataka putem različitih antena.
+\item {\bfseries{SDM (Spatial Division Multiplexing)\+:}} Metoda za povećanje kapaciteta prijenosa korištenjem više prostornih modova u vlaknu.
+\item {\bfseries{FMF (Few-\/\+Mode Fiber)\+:}} Optičko vlakno koje podržava prijenos nekoliko prostornih modova.
+\item {\bfseries{λ-\/\+MIMO\+:}} Napredna varijanta MIMO tehnologije koja koristi različite valne duljine (λ) za prijenos više signala kroz jedno optičko vlakno.
+\item {\bfseries{Massive MIMO\+:}} MIMO sistem s velikim brojem antena, ključan za buduće širokopojasne bežične mreže.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{Obrada Signala i Mreže}{Obrada Signala i Mreže}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\bfseries{MMSE (Minimum Mean Square Error)\+:}} Algoritam za izjednačavanje signala koji minimizira srednju kvadratnu grešku.
+\item {\bfseries{OFDM-\/\+PON (Orthogonal Frequency Division Multiplexing Passive Optical Network)\+:}} Tehnologija za prijenos podataka putem optičke mreže koja koristi OFDM modulaciju.
+\item {\bfseries{RoF (Radio over Fiber)\+:}} Tehnika prijenosa radio signala putem optičkog vlakna.
+\item {\bfseries{Hromatska disperzija (Chromatic Dispersion)\+:}} Širenje optičkih impulsa tokom prijenosa kroz vlakno, ograničava brzinu prijenosa podataka.
+\item {\bfseries{Digitalna obrada signala (DSP)\+:}} Obrada signala u digitalnom obliku, koristi se za poboljšanje kvalitete signala i kompenzaciju raznih efekata u komunikacijskom sistemu.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{Simulacija QPSK MIMO sistema}{Simulacija QPSK MIMO sistema}}\label{md__r_e_a_d_m_e_autotoc_md6}
+Ovaj Python kod implementira grafičko sučelje (GUI) za simulaciju QPSK (Quadrature Phase-\/\+Shift Keying) MIMO (Multiple-\/\+Input Multiple-\/\+Output) sistema u višemodnom optičkom vlaknu. Koristi biblioteke {\ttfamily tkinter} za GUI, {\ttfamily numpy} za numeričke operacije, {\ttfamily matplotlib} za vizualizaciju i {\ttfamily scipy} za obradu signala.\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{\texorpdfstring{Funkcionalnost}{Funkcionalnost}}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{GUI Parametri\+:}}
+\begin{DoxyItemize}
+\item Korisnik može postaviti parametre simulacije kao što su broj bita, SNR (omjer signala i šuma), broj predajnih i prijemnih antena, broj modova, dužinu vlakna i koeficijent slabljenja.
+\item Kanalna matrica se može postaviti ručno ili generirati automatski.
+\end{DoxyItemize}
+\item {\bfseries{Simulacija\+:}}
+\begin{DoxyItemize}
+\item Generiše se niz bitova koji se zatim moduliraju korištenjem QPSK modulacije.
+\item Simulira se prijenos signala kroz MIMO kanal, uključujući efekte sprezanja modova i disperzije.
+\item Dodaje se AWGN (Additive White Gaussian Noise) šum na primljeni signal.
+\item Primjenjuje se MMSE (Minimum Mean Square Error) ekvalizator za poboljšanje kvalitete signala.
+\item Demoduliraju se primljeni simboli i izračunava se BER (Bit Error Rate).
+\end{DoxyItemize}
+\item {\bfseries{Vizualizacija\+:}}
+\begin{DoxyItemize}
+\item Prikazuje se konstelacijski dijagram odašiljanih i primljenih signala.
+\item Prikazuje se kanalna matrica (magnituda i faza).
+\item Prikazuje se eye dijagram primljenog signala prije i poslije ekvalizacije.
+\item Prikazuje se utjecaj šuma na signal u vremenskoj domeni.
+\item Prikazuje se ovisnost BER o SNR i kapaciteta o SNR.
+\item Prikazuje se slabljenje signala duž vlakna.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{Biblioteke}{Biblioteke}}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\ttfamily tkinter}\+: Za izradu grafičkog korisničkog sučelja.
+\item {\ttfamily numpy}\+: Za numeričke operacije i manipulaciju matricama.
+\item {\ttfamily matplotlib}\+: Za vizualizaciju podataka i crtanje grafova.
+\item {\ttfamily scipy}\+: Za obradu signala i napredne matematičke funkcije.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{\texorpdfstring{Kako koristiti}{Kako koristiti}}\label{md__r_e_a_d_m_e_autotoc_md9}
+Za pokretanje simulacije, potrebno je pokrenuti skriptu {\ttfamily QPSK\+\_\+\+MIMO.\+py}. Nakon pokretanja, korisnik može unijeti željene parametre simulacije u grafičkom sučelju (GUI). Simulacija se pokreće klikom na dugme "{}\+Simuliraj"{}. Rezultati simulacije i grafovi se prikazuju u odgovarajućim tabovima. Za brisanje svih grafova i rezultata, koristi se dugme "{}\+Resetuj"{}. Dodatne upute o korištenju simulacije mogu se pronaći klikom na dugme "{}\+Pomoć"{}, a detaljnije objašnjenje QPSK MIMO koncepta u višemodnom vlaknu dostupno je klikom na dugme "{}\+Objasni koncept"{}. 

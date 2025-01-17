@@ -1,17 +1,28 @@
 var class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i =
 [
     [ "__init__", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a21e939e2faa7e97aa2587c181a2330ca", null ],
-    [ "create_channel_matrix_entries", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#ab3166400b65e6858bac6cc56450c9a56", null ],
+    [ "_calculate_ber", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a7e9d76d6eb289aa29d6615d832752871", null ],
+    [ "_demodulate_symbols", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a0b42281ad08deb454942aa1e0e3bb6b1", null ],
+    [ "calculate_ber", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a0b7ee8a017a74bfd8b282c0d57804279", null ],
+    [ "calculate_ber_for_snr", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a3e247aa16c83d4f6d278f6e03be02588", null ],
+    [ "create_channel_matrix_entries", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a0346e1209facfb302d21f4e1ca9d49dd", null ],
     [ "create_fiber_propagation_plot", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a405ed120e2f7ca6ffe49fb73faf842a9", null ],
-    [ "explain_concept", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#acc407c589a552a13c9ee42ce7b305c26", null ],
     [ "explain_concept", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#acc407c589a552a13c9ee42ce7b305c26", null ],
     [ "generate_channel_matrix", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a1919252fb090410a6b2465d18c5b57c9", null ],
     [ "get_channel_matrix_from_entries", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#addf9d08f2d58dadc18128407a58cca52", null ],
+    [ "hide_all_plots", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a15fd596b63bfd03a7f413fb93607be55", null ],
     [ "reset_simulation", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a8411c3242d3748fc90fd8751a53f550a", null ],
+    [ "show_all_plots", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#ad03e3dc12218066f951ee6ffb45d45fb", null ],
     [ "show_channel_matrix_popup", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a43fb85a56f76a78f0aedd82e0009786d", null ],
     [ "show_help", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a3c9b8582ecdd6c8aa9119e5ef89d4946", null ],
     [ "simulate", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#aed38cf233ca9aecf4ce90b341c3e6705", null ],
     [ "start_simulation", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#ade8723aac4510c5ed2c9c3b0f205529a", null ],
     [ "update_channel_matrix_entry_state", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a31160d40abe928234073bd593a5473a9", null ],
-    [ "update_channel_matrix_size", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a218c711cc9e1a77100f24cefeb9268a4", null ]
+    [ "update_channel_matrix_size", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a218c711cc9e1a77100f24cefeb9268a4", null ],
+    [ "channel_matrix_displayed", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#ad2672bc3febba6f4d3e50a9284ccfd04", null ],
+    [ "channel_matrix_entries", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#aa3fbc1794e9f98f5ffba2403dd0371ee", null ],
+    [ "channel_matrix_entry_readonly", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#ad757fd6861bff2a6e6751eef8c71cc70", null ],
+    [ "channel_matrix_popup", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#ad5964ce1be3febaf1e483d7a87d5527e", null ],
+    [ "fiber_propagation_ax", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a9cb323dad6f4f2359eb5f1b76a205bc8", null ],
+    [ "master", "class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a93c411abd36ebcd90cec59df2135adbe", null ]
 ];

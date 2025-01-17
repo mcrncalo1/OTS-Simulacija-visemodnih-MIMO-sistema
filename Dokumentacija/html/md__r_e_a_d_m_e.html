@@ -108,6 +108,81 @@ $(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Uvod</h1>
+<p>Ovaj projekat se bavi simulacijom i analizom MIMO (Multiple-Input Multiple-Output) sistema u optičkim telekomunikacijama, s posebnim fokusom na primjenu u vlaknima s više modova (FMF). Cilj je istražiti kako se MIMO tehnologije mogu koristiti za povećanje kapaciteta i pouzdanosti optičkih komunikacijskih sistema.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Ključni Pojmovi</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Gubici u Optičkim Vlaknima</h2>
+<ul>
+<li><b>Slabljenje (Attenuation):</b> Gubitak snage signala tokom prijenosa kroz optičko vlakno, mjeren u decibelima (dB).</li>
+<li><b>Apsorpcija materijala:</b> Gubitak optičke energije uslijed apsorpcije svjetlosti od strane materijala vlakna.</li>
+<li><b>Gubici uslijed raspršivanja:</b> Gubitak snage signala uslijed raspršivanja svjetlosti izvan jezgre vlakna.</li>
+<li><b>Nelinearni gubici:</b> Gubici koji se javljaju pri visokim nivoima optičke snage, uključujući stimulirano Ramanovo raspršivanje.</li>
+<li><b>Gubici uslijed savijanja:</b> Gubitak snage signala uslijed savijanja optičkog vlakna.</li>
+<li><b>Gubici uslijed spajanja modova:</b> Gubitak snage uslijed prijenosa energije između različitih modova u vlaknu.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+MIMO Sistemi</h2>
+<ul>
+<li><b>MIMO (Multiple-Input Multiple-Output):</b> Tehnologija koja koristi više antena za prijenos i prijem signala, povećavajući kapacitet i pouzdanost komunikacije.</li>
+<li><b>BER (Bit Error Rate):</b> Stopa grešaka u bitovima, mjera kvalitete prijenosa podataka.</li>
+<li><b>Prostorno multipleksiranje (Spatial Multiplexing):</b> Tehnika koja omogućava istovremeni prijenos više tokova podataka putem različitih antena.</li>
+<li><b>SDM (Spatial Division Multiplexing):</b> Metoda za povećanje kapaciteta prijenosa korištenjem više prostornih modova u vlaknu.</li>
+<li><b>FMF (Few-Mode Fiber):</b> Optičko vlakno koje podržava prijenos nekoliko prostornih modova.</li>
+<li><b>λ-MIMO:</b> Napredna varijanta MIMO tehnologije koja koristi različite valne duljine (λ) za prijenos više signala kroz jedno optičko vlakno.</li>
+<li><b>Massive MIMO:</b> MIMO sistem s velikim brojem antena, ključan za buduće širokopojasne bežične mreže.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Obrada Signala i Mreže</h2>
+<ul>
+<li><b>MMSE (Minimum Mean Square Error):</b> Algoritam za izjednačavanje signala koji minimizira srednju kvadratnu grešku.</li>
+<li><b>OFDM-PON (Orthogonal Frequency Division Multiplexing Passive Optical Network):</b> Tehnologija za prijenos podataka putem optičke mreže koja koristi OFDM modulaciju.</li>
+<li><b>RoF (Radio over Fiber):</b> Tehnika prijenosa radio signala putem optičkog vlakna.</li>
+<li><b>Hromatska disperzija (Chromatic Dispersion):</b> Širenje optičkih impulsa tokom prijenosa kroz vlakno, ograničava brzinu prijenosa podataka.</li>
+<li><b>Digitalna obrada signala (DSP):</b> Obrada signala u digitalnom obliku, koristi se za poboljšanje kvalitete signala i kompenzaciju raznih efekata u komunikacijskom sistemu.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Simulacija QPSK MIMO sistema</h1>
+<p>Ovaj Python kod implementira grafičko sučelje (GUI) za simulaciju QPSK (Quadrature Phase-Shift Keying) MIMO (Multiple-Input Multiple-Output) sistema u višemodnom optičkom vlaknu. Koristi biblioteke <code>tkinter</code> za GUI, <code>numpy</code> za numeričke operacije, <code>matplotlib</code> za vizualizaciju i <code>scipy</code> za obradu signala.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Funkcionalnost</h2>
+<ol type="1">
+<li><b>GUI Parametri:</b><ul>
+<li>Korisnik može postaviti parametre simulacije kao što su broj bita, SNR (omjer signala i šuma), broj predajnih i prijemnih antena, broj modova, dužinu vlakna i koeficijent slabljenja.</li>
+<li>Kanalna matrica se može postaviti ručno ili generirati automatski.</li>
+</ul>
+</li>
+<li><b>Simulacija:</b><ul>
+<li>Generiše se niz bitova koji se zatim moduliraju korištenjem QPSK modulacije.</li>
+<li>Simulira se prijenos signala kroz MIMO kanal, uključujući efekte sprezanja modova i disperzije.</li>
+<li>Dodaje se AWGN (Additive White Gaussian Noise) šum na primljeni signal.</li>
+<li>Primjenjuje se MMSE (Minimum Mean Square Error) ekvalizator za poboljšanje kvalitete signala.</li>
+<li>Demoduliraju se primljeni simboli i izračunava se BER (Bit Error Rate).</li>
+</ul>
+</li>
+<li><b>Vizualizacija:</b><ul>
+<li>Prikazuje se konstelacijski dijagram odašiljanih i primljenih signala.</li>
+<li>Prikazuje se kanalna matrica (magnituda i faza).</li>
+<li>Prikazuje se eye dijagram primljenog signala prije i poslije ekvalizacije.</li>
+<li>Prikazuje se utjecaj šuma na signal u vremenskoj domeni.</li>
+<li>Prikazuje se ovisnost BER o SNR i kapaciteta o SNR.</li>
+<li>Prikazuje se slabljenje signala duž vlakna.</li>
+</ul>
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Biblioteke</h2>
+<ul>
+<li><code>tkinter</code>: Za izradu grafičkog korisničkog sučelja.</li>
+<li><code>numpy</code>: Za numeričke operacije i manipulaciju matricama.</li>
+<li><code>matplotlib</code>: Za vizualizaciju podataka i crtanje grafova.</li>
+<li><code>scipy</code>: Za obradu signala i napredne matematičke funkcije.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Kako koristiti</h2>
+<p>Za pokretanje simulacije, potrebno je pokrenuti skriptu <code>QPSK_MIMO.py</code>. Nakon pokretanja, korisnik može unijeti željene parametre simulacije u grafičkom sučelju (GUI). Simulacija se pokreće klikom na dugme "Simuliraj". Rezultati simulacije i grafovi se prikazuju u odgovarajućim tabovima. Za brisanje svih grafova i rezultata, koristi se dugme "Resetuj". Dodatne upute o korištenju simulacije mogu se pronaći klikom na dugme "Pomoć", a detaljnije objašnjenje QPSK MIMO koncepta u višemodnom vlaknu dostupno je klikom na dugme "Objasni koncept". </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
