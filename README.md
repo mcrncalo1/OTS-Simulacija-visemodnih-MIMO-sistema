@@ -41,7 +41,7 @@ Ovaj Python kod implementira grafičko sučelje (GUI) za simulaciju QPSK (Quadra
 
 1.  **GUI Parametri:**
     *   Korisnik može postaviti parametre simulacije kao što su broj bita, SNR (omjer signala i šuma), broj predajnih i prijemnih antena, broj modova, dužinu vlakna i koeficijent slabljenja.
-    *   Matrica kanala se može postaviti ručno ili generirati automatski.
+    *   Kanalna matrica se može postaviti ručno ili generirati automatski.
 2.  **Simulacija:**
     *   Generiše se niz bitova koji se zatim moduliraju korištenjem QPSK modulacije.
     *   Simulira se prijenos signala kroz MIMO kanal, uključujući efekte sprezanja modova i disperzije.
@@ -50,7 +50,7 @@ Ovaj Python kod implementira grafičko sučelje (GUI) za simulaciju QPSK (Quadra
     *   Demoduliraju se primljeni simboli i izračunava se BER (Bit Error Rate).
 3.  **Vizualizacija:**
     *   Prikazuje se konstelacijski dijagram odašiljanih i primljenih signala.
-    *   Prikazuje se matrica kanala (magnituda i faza).
+    *   Prikazuje se kanalna matrica (magnituda i faza).
     *   Prikazuje se eye dijagram primljenog signala prije i poslije ekvalizacije.
     *   Prikazuje se utjecaj šuma na signal u vremenskoj domeni.
     *   Prikazuje se ovisnost BER o SNR i kapaciteta o SNR.
