@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hide_5ftooltip_0',['hide_tooltip',['../class_q_p_s_k___m_i_m_o_1_1_tool_tip.html#af675d4d45d6cbe96a62057c193f16a6d',1,'QPSK_MIMO::ToolTip']]]
+  ['hide_0',['hide',['../classQPSK__MIMO_1_1ToolTip.html#a0cb9246e1226fef63eb4ff5132cc1575',1,'QPSK_MIMO::ToolTip']]],
+  ['hide_5fall_5fplots_1',['hide_all_plots',['../classQPSK__MIMO_1_1QPSK__MIMO__GUI.html#a15fd596b63bfd03a7f413fb93607be55',1,'QPSK_MIMO::QPSK_MIMO_GUI']]]
 ];

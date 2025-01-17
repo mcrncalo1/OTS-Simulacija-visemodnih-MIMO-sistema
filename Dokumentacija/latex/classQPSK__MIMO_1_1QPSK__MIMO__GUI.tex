@@ -1,0 +1,858 @@
+\doxysection{QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI Class Reference}
+\hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI}{}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI}\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+
+
+Klasa koja implementira GUI za QPSK MIMO simulaciju.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a21e939e2faa7e97aa2587c181a2330ca}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a93c411abd36ebcd90cec59df2135adbe}{master}})
+\begin{DoxyCompactList}\small\item\em Konstruktor za klasu QPSK\+\_\+\+MIMO\+\_\+\+GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a15fd596b63bfd03a7f413fb93607be55}{hide\+\_\+all\+\_\+plots}} (self)
+\begin{DoxyCompactList}\small\item\em Sakriva sve grafove. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad03e3dc12218066f951ee6ffb45d45fb}{show\+\_\+all\+\_\+plots}} (self)
+\begin{DoxyCompactList}\small\item\em Prikazuje sve grafove. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ade8723aac4510c5ed2c9c3b0f205529a}{start\+\_\+simulation}} (self)
+\begin{DoxyCompactList}\small\item\em Pokreće proces simulacije. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a1919252fb090410a6b2465d18c5b57c9}{generate\+\_\+channel\+\_\+matrix}} (self, num\+\_\+tx\+\_\+modes, num\+\_\+rx\+\_\+modes, fiber\+\_\+length, seed=None, coupling\+\_\+coeff=0.\+01, dmd\+\_\+coeff=0.\+001)
+\begin{DoxyCompactList}\small\item\em Generiše matricu kanala. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0b7ee8a017a74bfd8b282c0d57804279}{calculate\+\_\+ber}} (self, tx\+\_\+bits, demodulated\+\_\+bits)
+\begin{DoxyCompactList}\small\item\em Izračunava Bit Error Rate (BER). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3e247aa16c83d4f6d278f6e03be02588}{calculate\+\_\+ber\+\_\+for\+\_\+snr}} (self, tx\+\_\+bits, received\+\_\+symbols, mapping, inverse\+\_\+mapping)
+\begin{DoxyCompactList}\small\item\em Izračunava Bit Error Rate (BER) za dati SNR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3c9b8582ecdd6c8aa9119e5ef89d4946}{show\+\_\+help}} (self)
+\begin{DoxyCompactList}\small\item\em Prikazuje prozor za pomoć sa uputama o korištenju simulacije. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acc407c589a552a13c9ee42ce7b305c26}{explain\+\_\+concept}} (self)
+\begin{DoxyCompactList}\small\item\em Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu. \end{DoxyCompactList}\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8411c3242d3748fc90fd8751a53f550a}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8411c3242d3748fc90fd8751a53f550a} 
+{\bfseries reset\+\_\+simulation} (self)
+\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8411c3242d3748fc90fd8751a53f550a}{reset\+\_\+simulation}} (self)
+\begin{DoxyCompactList}\small\item\em Resetuje sve grafove i rezultate simulacije. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a218c711cc9e1a77100f24cefeb9268a4}{update\+\_\+channel\+\_\+matrix\+\_\+size}} (self, event=None)
+\begin{DoxyCompactList}\small\item\em Ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aed38cf233ca9aecf4ce90b341c3e6705}{simulate}} (self)
+\begin{DoxyCompactList}\small\item\em Izvršava QPSK MIMO simulaciju. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a405ed120e2f7ca6ffe49fb73faf842a9}{create\+\_\+fiber\+\_\+propagation\+\_\+plot}} (self, fiber\+\_\+length, attenuation)
+\begin{DoxyCompactList}\small\item\em Kreira i prikazuje graf propagacije signala kroz vlakno. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a43fb85a56f76a78f0aedd82e0009786d}{show\+\_\+channel\+\_\+matrix\+\_\+popup}} (self)
+\begin{DoxyCompactList}\small\item\em Prikazuje popup prozor sa matricom kanala. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0346e1209facfb302d21f4e1ca9d49dd}{create\+\_\+channel\+\_\+matrix\+\_\+entries}} (self, matrix, matrix\+\_\+frame, popup\+\_\+window)
+\begin{DoxyCompactList}\small\item\em Kreira i prikazuje unose matrice kanala u popup prozoru. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_addf9d08f2d58dadc18128407a58cca52}{get\+\_\+channel\+\_\+matrix\+\_\+from\+\_\+entries}} (self)
+\begin{DoxyCompactList}\small\item\em Preuzima matricu kanala iz GUI unosa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a31160d40abe928234073bd593a5473a9}{update\+\_\+channel\+\_\+matrix\+\_\+entry\+\_\+state}} (self)
+\begin{DoxyCompactList}\small\item\em Ažurira stanje unosa matrice kanala (samo za čitanje ili uređivanje). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a93c411abd36ebcd90cec59df2135adbe}{master}}
+\begin{DoxyCompactList}\small\item\em Inicijalizira GUI za QPSK MIMO simulaciju. \end{DoxyCompactList}\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8d1316f96b29a8585657cebb227bd48c}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8d1316f96b29a8585657cebb227bd48c} 
+{\bfseries results\+\_\+frame}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a4b60f78ecbce40b5cb9bb6a602aa716b}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a4b60f78ecbce40b5cb9bb6a602aa716b} 
+{\bfseries ber\+\_\+label\+\_\+text}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae7705c0447978036c242e926d1311b6b}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae7705c0447978036c242e926d1311b6b} 
+{\bfseries ber\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8edb6a9c5081f0052a905e208a9c2c09}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8edb6a9c5081f0052a905e208a9c2c09} 
+{\bfseries snr\+\_\+result\+\_\+label\+\_\+text}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a286036e188243e2de1c5fc504da5cde9}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a286036e188243e2de1c5fc504da5cde9} 
+{\bfseries snr\+\_\+result\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae93b230369b7db5a0458b044a83a6cf1}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae93b230369b7db5a0458b044a83a6cf1} 
+{\bfseries capacity\+\_\+label\+\_\+text}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aac3c805ce4265f98633d317151daea1c}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aac3c805ce4265f98633d317151daea1c} 
+{\bfseries capacity\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6a06e06fa0661e0dc46f7c2429801746}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6a06e06fa0661e0dc46f7c2429801746} 
+{\bfseries input\+\_\+frame}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a009c1cd28a3bf4a07fea8d1661b1ff5e}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a009c1cd28a3bf4a07fea8d1661b1ff5e} 
+{\bfseries num\+\_\+bits\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aa2ee0be9422fef26cbd95ace61fd9375}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aa2ee0be9422fef26cbd95ace61fd9375} 
+{\bfseries num\+\_\+bits\+\_\+entry}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aedeb1353cabe16d0c666b7d592fc7a9c}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aedeb1353cabe16d0c666b7d592fc7a9c} 
+{\bfseries snr\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3fcd1089405d3463b9dc6398e27ee41f}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3fcd1089405d3463b9dc6398e27ee41f} 
+{\bfseries snr\+\_\+entry}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_abe9e9022fe694047d6a634b83146f53b}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_abe9e9022fe694047d6a634b83146f53b} 
+{\bfseries num\+\_\+tx\+\_\+ant\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acb1c36ca2e6e9aaf5c5c5ad159b17504}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acb1c36ca2e6e9aaf5c5c5ad159b17504} 
+{\bfseries num\+\_\+tx\+\_\+ant\+\_\+entry}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac1560106d4001f44eb902d4dc5db5bbb}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac1560106d4001f44eb902d4dc5db5bbb} 
+{\bfseries update\+\_\+channel\+\_\+matrix\+\_\+size}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a854e5e5327004a1bb94bec2a1c0f242e}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a854e5e5327004a1bb94bec2a1c0f242e} 
+{\bfseries num\+\_\+rx\+\_\+ant\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a28f6b1dcf69138091a2882024b6e3a35}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a28f6b1dcf69138091a2882024b6e3a35} 
+{\bfseries num\+\_\+rx\+\_\+ant\+\_\+entry}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aac92056fbbe167e4c7b810e9e9958ef2}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aac92056fbbe167e4c7b810e9e9958ef2} 
+{\bfseries num\+\_\+modes\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad02c1b1e32e560a0416639a3244e232c}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad02c1b1e32e560a0416639a3244e232c} 
+{\bfseries num\+\_\+modes\+\_\+entry}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_adf91de9770c45bd92f6453f4211da944}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_adf91de9770c45bd92f6453f4211da944} 
+{\bfseries channel\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a768b1ca6cf36c8c31523436206bcb025}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a768b1ca6cf36c8c31523436206bcb025} 
+{\bfseries channel\+\_\+matrix\+\_\+button}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a757189dff9b2eeb7ae6ed1e729c9e363}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a757189dff9b2eeb7ae6ed1e729c9e363} 
+{\bfseries channel\+\_\+matrix\+\_\+entries}
+\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a58d7354e322217f327466026b7126a17}{channel\+\_\+matrix\+\_\+entry\+\_\+readonly}}
+\begin{DoxyCompactList}\small\item\em Resetuje sve grafove i rezultate simulacije. \end{DoxyCompactList}\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a05e671ca7d0537f65eea6ea23fc44d7c}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a05e671ca7d0537f65eea6ea23fc44d7c} 
+{\bfseries fiber\+\_\+length\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a956907096c6aad321f7a78a797874bda}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a956907096c6aad321f7a78a797874bda} 
+{\bfseries fiber\+\_\+length\+\_\+entry}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a986335b26c1e2fbc32254e1cb8eb1df2}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a986335b26c1e2fbc32254e1cb8eb1df2} 
+{\bfseries attenuation\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af7fbcabbb29532e77b5250ad621597c9}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af7fbcabbb29532e77b5250ad621597c9} 
+{\bfseries attenuation\+\_\+entry}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6fc6d17dc3f2e0aea392d10985935730}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6fc6d17dc3f2e0aea392d10985935730} 
+{\bfseries crosstalk\+\_\+var}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ab9615ae83c63a88d940707c8aa25085f}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ab9615ae83c63a88d940707c8aa25085f} 
+{\bfseries crosstalk\+\_\+check}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6081379ddcda4f047458c161f8cb6842}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6081379ddcda4f047458c161f8cb6842} 
+{\bfseries explain\+\_\+button}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0dcadfc60ecf41d16b8457770311399e}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0dcadfc60ecf41d16b8457770311399e} 
+{\bfseries help\+\_\+button}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af75fede20b6078463539320d9de54e2e}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af75fede20b6078463539320d9de54e2e} 
+{\bfseries simulate\+\_\+button}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acb951fe8c430e0c377f269a5559843e0}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acb951fe8c430e0c377f269a5559843e0} 
+{\bfseries reset\+\_\+button}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac678c8f15ab6cef518d861fe85ed2de7}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac678c8f15ab6cef518d861fe85ed2de7} 
+{\bfseries loading\+\_\+label}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aae43b9d4f6cd578d58c6826e07684157}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aae43b9d4f6cd578d58c6826e07684157} 
+{\bfseries notebook}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af4b1873e51edd0d197acb380c828bdee}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af4b1873e51edd0d197acb380c828bdee} 
+{\bfseries tx\+\_\+signal\+\_\+tab}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a7053da62b066afceb252e3064828a621}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a7053da62b066afceb252e3064828a621} 
+{\bfseries tx\+\_\+signal\+\_\+figure}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac53f9880f30dee1d61f0ca8858ebd267}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac53f9880f30dee1d61f0ca8858ebd267} 
+{\bfseries tx\+\_\+signal\+\_\+ax}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9febd8ba07383ab6ab95de7eba20a855}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9febd8ba07383ab6ab95de7eba20a855} 
+{\bfseries tx\+\_\+signal\+\_\+time\+\_\+ax}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a454e7705dec3ee09a27e7857f062815c}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a454e7705dec3ee09a27e7857f062815c} 
+{\bfseries tx\+\_\+signal\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0178ef666623177e87bf952594ba0758}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0178ef666623177e87bf952594ba0758} 
+{\bfseries tx\+\_\+signal\+\_\+canvas\+\_\+widget}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_afff6f98e9a8d613f814019d8fe5be56b}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_afff6f98e9a8d613f814019d8fe5be56b} 
+{\bfseries constellation\+\_\+tab}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6dd0870b7b3bcba4a6fae668c7ade2d7}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6dd0870b7b3bcba4a6fae668c7ade2d7} 
+{\bfseries constellation\+\_\+figure}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aff148440312310f15c0176b968b96c94}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aff148440312310f15c0176b968b96c94} 
+{\bfseries constellation\+\_\+ax}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aecf713cd0c17eb8e0624784e3345db7a}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aecf713cd0c17eb8e0624784e3345db7a} 
+{\bfseries constellation\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac1156075115efb1b099975b5ed1b3960}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac1156075115efb1b099975b5ed1b3960} 
+{\bfseries constellation\+\_\+canvas\+\_\+widget}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_addd1a6828fd6a2400dd0927bb095b8ce}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_addd1a6828fd6a2400dd0927bb095b8ce} 
+{\bfseries channel\+\_\+tab}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0bdd441d068372b0d3950634f0934a52}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0bdd441d068372b0d3950634f0934a52} 
+{\bfseries channel\+\_\+figure}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a4d556178f0c1712d7f91d4db33a6ca8d}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a4d556178f0c1712d7f91d4db33a6ca8d} 
+{\bfseries channel\+\_\+ax\+\_\+mag}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aacfb2952ac1d647542310a0230f8e6da}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aacfb2952ac1d647542310a0230f8e6da} 
+{\bfseries channel\+\_\+ax\+\_\+phase}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6b60e4aa4d6f5a2441268e1e94bc6caa}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6b60e4aa4d6f5a2441268e1e94bc6caa} 
+{\bfseries channel\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aeede69a0fcc2d20240c6fa8e83b974a6}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aeede69a0fcc2d20240c6fa8e83b974a6} 
+{\bfseries channel\+\_\+canvas\+\_\+widget}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a432c172990a8ab7947ba7831037fe57b}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a432c172990a8ab7947ba7831037fe57b} 
+{\bfseries eye\+\_\+diagram\+\_\+tab}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a76aefea10376800b73b4c9bda382f582}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a76aefea10376800b73b4c9bda382f582} 
+{\bfseries eye\+\_\+diagram\+\_\+figure}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a67f39e251dc74527f1aa4c4defe58043}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a67f39e251dc74527f1aa4c4defe58043} 
+{\bfseries eye\+\_\+diagram\+\_\+ax\+\_\+before}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a13d1ed422e3498da67cf261f47c82cf0}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a13d1ed422e3498da67cf261f47c82cf0} 
+{\bfseries eye\+\_\+diagram\+\_\+ax\+\_\+after}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_abb42109fc43e172acb70f7f65bb80cbb}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_abb42109fc43e172acb70f7f65bb80cbb} 
+{\bfseries eye\+\_\+diagram\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9cf828dbc4d5336388f3eab548837858}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9cf828dbc4d5336388f3eab548837858} 
+{\bfseries eye\+\_\+diagram\+\_\+canvas\+\_\+widget}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acf14c9373964a6c22e2d619c4715c1ba}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acf14c9373964a6c22e2d619c4715c1ba} 
+{\bfseries noise\+\_\+impact\+\_\+tab}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aa5301ed5ddeb847e0ae435cf34c7c6c8}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aa5301ed5ddeb847e0ae435cf34c7c6c8} 
+{\bfseries noise\+\_\+impact\+\_\+figure}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_abe558dc6043dec61176004c031ae6b32}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_abe558dc6043dec61176004c031ae6b32} 
+{\bfseries noise\+\_\+impact\+\_\+ax\+\_\+real}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ade146a4c17e30bcee5f5359092bb6c46}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ade146a4c17e30bcee5f5359092bb6c46} 
+{\bfseries noise\+\_\+impact\+\_\+ax\+\_\+imag}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae16d34f3d2434be1f99af6e69c0dbaeb}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae16d34f3d2434be1f99af6e69c0dbaeb} 
+{\bfseries noise\+\_\+impact\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_afed340223c64facf3b71b5e92e164b7e}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_afed340223c64facf3b71b5e92e164b7e} 
+{\bfseries noise\+\_\+impact\+\_\+canvas\+\_\+widget}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a1aec8eef26649d2cfa15f54c869419cf}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a1aec8eef26649d2cfa15f54c869419cf} 
+{\bfseries snr\+\_\+ber\+\_\+tab}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9da6b96313e21c3f5afccfc40e26ebdd}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9da6b96313e21c3f5afccfc40e26ebdd} 
+{\bfseries snr\+\_\+ber\+\_\+figure}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a969799571d7418161dfddf4462659cb2}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a969799571d7418161dfddf4462659cb2} 
+{\bfseries snr\+\_\+ber\+\_\+ax}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad1c45f96f70a746d5f6918cba4c86ea2}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad1c45f96f70a746d5f6918cba4c86ea2} 
+{\bfseries snr\+\_\+ber\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_abb07b2fb555a6d8026865b1dbc574502}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_abb07b2fb555a6d8026865b1dbc574502} 
+{\bfseries snr\+\_\+ber\+\_\+canvas\+\_\+widget}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a104d51803deb7aa3e27efb158f38a71b}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a104d51803deb7aa3e27efb158f38a71b} 
+{\bfseries modes\+\_\+ber\+\_\+tab}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aff8a54464804ad030deb6bef900a5891}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aff8a54464804ad030deb6bef900a5891} 
+{\bfseries modes\+\_\+ber\+\_\+figure}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a5c1ee5bbc182d5f63bc6cf15d26929aa}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a5c1ee5bbc182d5f63bc6cf15d26929aa} 
+{\bfseries modes\+\_\+ber\+\_\+ax}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad7cd4605c700aa77933e291beb8110dd}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad7cd4605c700aa77933e291beb8110dd} 
+{\bfseries modes\+\_\+ber\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a33ceeae1fe114090430593adc558ab95}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a33ceeae1fe114090430593adc558ab95} 
+{\bfseries modes\+\_\+ber\+\_\+canvas\+\_\+widget}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3dfa8bf7774e80b7051679491d70e6e6}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3dfa8bf7774e80b7051679491d70e6e6} 
+{\bfseries detailed\+\_\+fiber\+\_\+tab}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a057eabe92c7b32091c69bbc03ba7a9e1}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a057eabe92c7b32091c69bbc03ba7a9e1} 
+{\bfseries detailed\+\_\+fiber\+\_\+figure}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af4a161e89a7bfa63dcf3bbdc43ee705f}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af4a161e89a7bfa63dcf3bbdc43ee705f} 
+{\bfseries detailed\+\_\+fiber\+\_\+ax}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a17575023ff55db73b61ce3b7a5f3e8d2}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a17575023ff55db73b61ce3b7a5f3e8d2} 
+{\bfseries detailed\+\_\+fiber\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0cad1ecfbcf509b535d4e2bc285a9010}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0cad1ecfbcf509b535d4e2bc285a9010} 
+{\bfseries detailed\+\_\+fiber\+\_\+canvas\+\_\+widget}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3ec213b5094c0e40faad8e062d410ffe}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3ec213b5094c0e40faad8e062d410ffe} 
+{\bfseries channel\+\_\+matrix\+\_\+displayed}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9cb323dad6f4f2359eb5f1b76a205bc8}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9cb323dad6f4f2359eb5f1b76a205bc8} 
+{\bfseries fiber\+\_\+propagation\+\_\+ax}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a348527455676a2d731a22f80a29f9c94}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a348527455676a2d731a22f80a29f9c94} 
+{\bfseries fiber\+\_\+propagation\+\_\+canvas}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3f266a5652ab5090641072190e2a6b57}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3f266a5652ab5090641072190e2a6b57} 
+{\bfseries received\+\_\+symbols}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac6e459bfdab90f28e89c6f4cf9ae78a3}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ac6e459bfdab90f28e89c6f4cf9ae78a3} 
+{\bfseries equalized\+\_\+symbols}
+\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad5964ce1be3febaf1e483d7a87d5527e}{channel\+\_\+matrix\+\_\+popup}}
+\begin{DoxyCompactList}\small\item\em Prikazuje popup prozor sa matricom kanala. \end{DoxyCompactList}\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8b02856fdce2b7c4f60f511dcf2745dc}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8b02856fdce2b7c4f60f511dcf2745dc} 
+{\bfseries COUPLING\+\_\+\+COEFF}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a36a6b269598c997fdf0ef35f80c5b0d0}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a36a6b269598c997fdf0ef35f80c5b0d0} 
+{\bfseries DMD\+\_\+\+COEFF}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a4c1ca17cec4f7389e32f13195fae578c}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a4c1ca17cec4f7389e32f13195fae578c} 
+{\bfseries SEED}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aa42122f3e1881ecd457d425c2c7646a7}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aa42122f3e1881ecd457d425c2c7646a7} 
+{\bfseries MIN\+\_\+\+NUM\+\_\+\+BITS}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae3bee6a7d0c950652be3ab767ceefbc7}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae3bee6a7d0c950652be3ab767ceefbc7} 
+{\bfseries MAX\+\_\+\+NUM\+\_\+\+BITS}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a60668afe5d734b66ab9375e6f2fa5ae2}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a60668afe5d734b66ab9375e6f2fa5ae2} 
+{\bfseries MIN\+\_\+\+SNR\+\_\+\+DB}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a317cc842c3da20de29d1492228d0e4d9}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a317cc842c3da20de29d1492228d0e4d9} 
+{\bfseries MAX\+\_\+\+SNR\+\_\+\+DB}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6cb2a4b63ddea774d21ecbdd8037a914}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a6cb2a4b63ddea774d21ecbdd8037a914} 
+{\bfseries MIN\+\_\+\+NUM\+\_\+\+ANTENNAS}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ab461b55c5e39c08188d97aa2d3cc5d03}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ab461b55c5e39c08188d97aa2d3cc5d03} 
+{\bfseries MAX\+\_\+\+NUM\+\_\+\+ANTENNAS}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8c48fa0f320d9e6765973596c7eec23d}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8c48fa0f320d9e6765973596c7eec23d} 
+{\bfseries MIN\+\_\+\+NUM\+\_\+\+MODES}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9a437274821eaffb93d34fa5e7a3f044}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a9a437274821eaffb93d34fa5e7a3f044} 
+{\bfseries MAX\+\_\+\+NUM\+\_\+\+MODES}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af4de5459caa9204c9e1fc1905e3abb8f}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_af4de5459caa9204c9e1fc1905e3abb8f} 
+{\bfseries MIN\+\_\+\+FIBER\+\_\+\+LENGTH}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad5c5c2bdf7f0defe57520885e4a0554d}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad5c5c2bdf7f0defe57520885e4a0554d} 
+{\bfseries MAX\+\_\+\+FIBER\+\_\+\+LENGTH}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a2e4867a00947b1a213651faffbc039b4}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a2e4867a00947b1a213651faffbc039b4} 
+{\bfseries MIN\+\_\+\+ATTENUATION}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a78dffd17aed367b994dd65c750199cf4}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a78dffd17aed367b994dd65c750199cf4} 
+{\bfseries MAX\+\_\+\+ATTENUATION}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae95f2da0bbc418e533a9b83c744d922a}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ae95f2da0bbc418e533a9b83c744d922a} 
+{\bfseries EYE\+\_\+\+DIAGRAM\+\_\+\+SYMBOLS}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad013a1726277b5398496472479a03fe2}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad013a1726277b5398496472479a03fe2} 
+{\bfseries CONSTELLATION\+\_\+\+MARGIN}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acd714a8fa31a127ad171962bbf07d52d}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acd714a8fa31a127ad171962bbf07d52d} 
+{\bfseries FIBER\+\_\+\+PROPAGATION\+\_\+\+POINTS}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a28a4b6139f60522954f8b877d47b577f}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a28a4b6139f60522954f8b877d47b577f} 
+{\bfseries FIBER\+\_\+\+LENGTH\+\_\+\+SCALE}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ab4afcf5242ced5a57db215d97b92ff29}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ab4afcf5242ced5a57db215d97b92ff29} 
+{\bfseries CROSSTALK\+\_\+\+COEFF}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a5704d1956d6f1c243fe7666ab242d585}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a5704d1956d6f1c243fe7666ab242d585} 
+{\bfseries TOOLTIP\+\_\+\+OFFSET\+\_\+X}
+\item 
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a80a1ce881465515cb47d99b8e4b70313}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a80a1ce881465515cb47d99b8e4b70313} 
+{\bfseries TOOLTIP\+\_\+\+OFFSET\+\_\+Y}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a7e9d76d6eb289aa29d6615d832752871}{\+\_\+calculate\+\_\+ber}} (self, tx\+\_\+bits, demodulated\+\_\+bits)
+\begin{DoxyCompactList}\small\item\em Izračunava Bit Error Rate (BER). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0b42281ad08deb454942aa1e0e3bb6b1}{\+\_\+demodulate\+\_\+symbols}} (self, received\+\_\+symbols, mapping, inverse\+\_\+mapping)
+\begin{DoxyCompactList}\small\item\em Demodulira primljene simbole u bitove. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa koja implementira GUI za QPSK MIMO simulaciju. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a21e939e2faa7e97aa2587c181a2330ca}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a21e939e2faa7e97aa2587c181a2330ca} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{master }\end{DoxyParamCaption})}
+
+
+
+Konstruktor za klasu QPSK\+\_\+\+MIMO\+\_\+\+GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Glavni prozor.\\
+\hline
+\end{DoxyParams}
+Inicijalizira glavni prozor i sve GUI elemente za QPSK MIMO simulaciju.
+
+\begin{DoxyVerb}@brief Konstruktor klase QPSK_MIMO_GUI.
+
+@param master Glavni prozor aplikacije.
+
+@details Inicijalizira glavni prozor i sve GUI elemente potrebne za QPSK MIMO simulaciju.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a7e9d76d6eb289aa29d6615d832752871}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a7e9d76d6eb289aa29d6615d832752871} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!\_calculate\_ber@{\_calculate\_ber}}
+\index{\_calculate\_ber@{\_calculate\_ber}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_ber()}{\_calculate\_ber()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+\_\+calculate\+\_\+ber (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tx\+\_\+bits,  }\item[{}]{demodulated\+\_\+bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Izračunava Bit Error Rate (BER). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tx\+\_\+bits} & Predajni bitovi. \\
+\hline
+{\em demodulated\+\_\+bits} & Demodulirani bitovi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Izračunata BER vrijednost.
+\end{DoxyReturn}
+Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+
+\begin{DoxyVerb}@brief Izračunava Bit Error Rate (BER).
+
+@param tx_bits Predajni bitovi.
+@param demodulated_bits Demodulirani bitovi.
+@return Izračunata BER vrijednost.
+@details Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0b42281ad08deb454942aa1e0e3bb6b1}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0b42281ad08deb454942aa1e0e3bb6b1} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!\_demodulate\_symbols@{\_demodulate\_symbols}}
+\index{\_demodulate\_symbols@{\_demodulate\_symbols}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{\_demodulate\_symbols()}{\_demodulate\_symbols()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+\_\+demodulate\+\_\+symbols (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{received\+\_\+symbols,  }\item[{}]{mapping,  }\item[{}]{inverse\+\_\+mapping }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Demodulira primljene simbole u bitove. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em received\+\_\+symbols} & Primljeni simboli. \\
+\hline
+{\em mapping} & Rječnik QPSK mapiranja. \\
+\hline
+{\em inverse\+\_\+mapping} & Inverzni rječnik QPSK mapiranja. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Demodulirani bitovi.
+\end{DoxyReturn}
+Ova metoda demodulira primljene simbole u bitove koristeći pristup najbližeg susjeda.
+
+\begin{DoxyVerb}@brief Demodulira primljene simbole u bitove.
+
+@param received_symbols Primljeni simboli.
+@param mapping Rječnik QPSK mapiranja.
+@param inverse_mapping Inverzni rječnik QPSK mapiranja.
+@return Demodulirani bitovi.
+@details Ova metoda demodulira primljene simbole u bitove koristeći pristup najbližeg susjeda.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0b7ee8a017a74bfd8b282c0d57804279}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0b7ee8a017a74bfd8b282c0d57804279} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!calculate\_ber@{calculate\_ber}}
+\index{calculate\_ber@{calculate\_ber}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{calculate\_ber()}{calculate\_ber()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+calculate\+\_\+ber (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tx\+\_\+bits,  }\item[{}]{demodulated\+\_\+bits }\end{DoxyParamCaption})}
+
+
+
+Izračunava Bit Error Rate (BER). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tx\+\_\+bits} & Predajni bitovi. \\
+\hline
+{\em demodulated\+\_\+bits} & Demodulirani bitovi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Izračunata BER vrijednost.
+\end{DoxyReturn}
+Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+
+\begin{DoxyVerb}@brief Calculates the Bit Error Rate (BER).
+
+@param tx_bits The transmitted bits.
+@param demodulated_bits The demodulated bits.
+@return The calculated BER value.
+@details This method calculates the BER by comparing the transmitted and demodulated bits.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3e247aa16c83d4f6d278f6e03be02588}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3e247aa16c83d4f6d278f6e03be02588} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!calculate\_ber\_for\_snr@{calculate\_ber\_for\_snr}}
+\index{calculate\_ber\_for\_snr@{calculate\_ber\_for\_snr}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{calculate\_ber\_for\_snr()}{calculate\_ber\_for\_snr()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+calculate\+\_\+ber\+\_\+for\+\_\+snr (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tx\+\_\+bits,  }\item[{}]{received\+\_\+symbols,  }\item[{}]{mapping,  }\item[{}]{inverse\+\_\+mapping }\end{DoxyParamCaption})}
+
+
+
+Izračunava Bit Error Rate (BER) za dati SNR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tx\+\_\+bits} & Predajni bitovi. \\
+\hline
+{\em received\+\_\+symbols} & Primljeni simboli. \\
+\hline
+{\em mapping} & Rječnik QPSK mapiranja. \\
+\hline
+{\em inverse\+\_\+mapping} & Inverzni rječnik QPSK mapiranja. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Izračunata BER vrijednost.
+\end{DoxyReturn}
+Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+
+\begin{DoxyVerb}@brief Izračunava Bit Error Rate (BER) za dati SNR.
+
+@param tx_bits Predajni bitovi.
+@param received_symbols Primljeni simboli.
+@param mapping Rječnik QPSK mapiranja.
+@param inverse_mapping Inverzni rječnik QPSK mapiranja.
+@return Izračunata BER vrijednost.
+@details Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0346e1209facfb302d21f4e1ca9d49dd}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a0346e1209facfb302d21f4e1ca9d49dd} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!create\_channel\_matrix\_entries@{create\_channel\_matrix\_entries}}
+\index{create\_channel\_matrix\_entries@{create\_channel\_matrix\_entries}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{create\_channel\_matrix\_entries()}{create\_channel\_matrix\_entries()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+create\+\_\+channel\+\_\+matrix\+\_\+entries (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{matrix,  }\item[{}]{matrix\+\_\+frame,  }\item[{}]{popup\+\_\+window }\end{DoxyParamCaption})}
+
+
+
+Kreira i prikazuje unose matrice kanala u popup prozoru. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Matrica kanala za prikaz. \\
+\hline
+{\em matrix\+\_\+frame} & Okvir u kojem se prikazuju unosi matrice. \\
+\hline
+{\em popup\+\_\+window} & Prozor u kojem se prikazuju unosi matrice.\\
+\hline
+\end{DoxyParams}
+Ova metoda kreira i prikazuje unose matrice kanala u popup prozoru, na osnovu date matrice i okvira.
+
+\begin{DoxyVerb}@brief Kreira i prikazuje unose matrice kanala u popup prozoru.
+
+@param matrix Matrica kanala za prikaz.
+@param matrix_frame Okvir u kojem se prikazuju unosi matrice.
+@param popup_window Prozor u kojem se prikazuju unosi matrice.
+@details Ova metoda kreira i prikazuje unose matrice kanala u popup prozoru, na osnovu date matrice i okvira.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a405ed120e2f7ca6ffe49fb73faf842a9}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a405ed120e2f7ca6ffe49fb73faf842a9} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!create\_fiber\_propagation\_plot@{create\_fiber\_propagation\_plot}}
+\index{create\_fiber\_propagation\_plot@{create\_fiber\_propagation\_plot}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{create\_fiber\_propagation\_plot()}{create\_fiber\_propagation\_plot()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+create\+\_\+fiber\+\_\+propagation\+\_\+plot (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fiber\+\_\+length,  }\item[{}]{attenuation }\end{DoxyParamCaption})}
+
+
+
+Kreira i prikazuje graf propagacije signala kroz vlakno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fiber\+\_\+length} & Dužina vlakna u km. \\
+\hline
+{\em attenuation} & Slabljenje vlakna u d\+B/km.\\
+\hline
+\end{DoxyParams}
+Ova metoda kreira i prikazuje graf koji pokazuje snagu signala duž vlakna.
+
+\begin{DoxyVerb}@brief Kreira i prikazuje graf propagacije signala kroz vlakno.
+
+@param fiber_length Dužina vlakna u km.
+@param attenuation Slabljenje vlakna u dB/km.
+@details Ova metoda kreira i prikazuje graf koji pokazuje snagu signala duž vlakna.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acc407c589a552a13c9ee42ce7b305c26}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_acc407c589a552a13c9ee42ce7b305c26} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!explain\_concept@{explain\_concept}}
+\index{explain\_concept@{explain\_concept}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{explain\_concept()}{explain\_concept()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+explain\+\_\+concept (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu. 
+
+Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
+
+\begin{DoxyVerb}@brief Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu.
+
+@details Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a1919252fb090410a6b2465d18c5b57c9}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a1919252fb090410a6b2465d18c5b57c9} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!generate\_channel\_matrix@{generate\_channel\_matrix}}
+\index{generate\_channel\_matrix@{generate\_channel\_matrix}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{generate\_channel\_matrix()}{generate\_channel\_matrix()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+generate\+\_\+channel\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{num\+\_\+tx\+\_\+modes,  }\item[{}]{num\+\_\+rx\+\_\+modes,  }\item[{}]{fiber\+\_\+length,  }\item[{}]{seed = {\ttfamily None},  }\item[{}]{coupling\+\_\+coeff = {\ttfamily 0.01},  }\item[{}]{dmd\+\_\+coeff = {\ttfamily 0.001} }\end{DoxyParamCaption})}
+
+
+
+Generiše matricu kanala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+tx\+\_\+modes} & Broj predajnih modova. \\
+\hline
+{\em num\+\_\+rx\+\_\+modes} & Broj prijemnih modova. \\
+\hline
+{\em fiber\+\_\+length} & Dužina vlakna u km. \\
+\hline
+{\em seed} & Slučajni seed za ponovljivost. \\
+\hline
+{\em coupling\+\_\+coeff} & Koeficijent sprezanja. \\
+\hline
+{\em dmd\+\_\+coeff} & Koeficijent diferencijalnog kašnjenja moda. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Generisana matrica kanala.
+\end{DoxyReturn}
+Ova metoda generiše matricu kanala na osnovu broja predajnih i prijemnih modova, dužine vlakna i ostalih parametara.
+
+\begin{DoxyVerb}@brief Generiše matricu kanala.
+
+@param num_tx_modes Broj predajnih modova.
+@param num_rx_modes Broj prijemnih modova.
+@param fiber_length Dužina vlakna u km.
+@param seed Slučajni seed za ponovljivost.
+@param coupling_coeff Koeficijent sprezanja.
+@param dmd_coeff Koeficijent diferencijalnog kašnjenja moda.
+@return Generisana matrica kanala.
+@details Ova metoda generiše matricu kanala na osnovu broja predajnih i prijemnih modova, dužine vlakna i ostalih parametara.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_addf9d08f2d58dadc18128407a58cca52}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_addf9d08f2d58dadc18128407a58cca52} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!get\_channel\_matrix\_from\_entries@{get\_channel\_matrix\_from\_entries}}
+\index{get\_channel\_matrix\_from\_entries@{get\_channel\_matrix\_from\_entries}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{get\_channel\_matrix\_from\_entries()}{get\_channel\_matrix\_from\_entries()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+get\+\_\+channel\+\_\+matrix\+\_\+from\+\_\+entries (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Preuzima matricu kanala iz GUI unosa. 
+
+\begin{DoxyReturn}{Returns}
+Matrica kanala kao Num\+Py niz.
+\end{DoxyReturn}
+Ova metoda preuzima matricu kanala iz GUI unosa i vraća je kao Num\+Py niz.
+
+\begin{DoxyVerb}@brief Preuzima matricu kanala iz GUI unosa.
+
+@return Matrica kanala kao NumPy niz.
+@details Ova metoda preuzima matricu kanala iz GUI unosa i vraća je kao NumPy niz.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a15fd596b63bfd03a7f413fb93607be55}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a15fd596b63bfd03a7f413fb93607be55} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!hide\_all\_plots@{hide\_all\_plots}}
+\index{hide\_all\_plots@{hide\_all\_plots}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{hide\_all\_plots()}{hide\_all\_plots()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+hide\+\_\+all\+\_\+plots (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Sakriva sve grafove. 
+
+Ova metoda sakriva sve grafove u GUI.
+
+\begin{DoxyVerb}@brief Sakriva sve grafove.
+
+@details Ova metoda sakriva sve grafove u GUI.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8411c3242d3748fc90fd8751a53f550a}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a8411c3242d3748fc90fd8751a53f550a} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!reset\_simulation@{reset\_simulation}}
+\index{reset\_simulation@{reset\_simulation}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{reset\_simulation()}{reset\_simulation()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+reset\+\_\+simulation (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Resetuje sve grafove i rezultate simulacije. 
+
+Ova metoda briše sve grafove i resetuje rezultate simulacije na početne vrijednosti.
+
+\begin{DoxyVerb}@brief Resetuje sve grafove i rezultate simulacije.
+
+@details Ova metoda briše sve grafove i resetuje rezultate simulacije na početne vrijednosti.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad03e3dc12218066f951ee6ffb45d45fb}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad03e3dc12218066f951ee6ffb45d45fb} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!show\_all\_plots@{show\_all\_plots}}
+\index{show\_all\_plots@{show\_all\_plots}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{show\_all\_plots()}{show\_all\_plots()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+show\+\_\+all\+\_\+plots (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Prikazuje sve grafove. 
+
+Ova metoda prikazuje sve grafove u GUI.
+
+\begin{DoxyVerb}@brief Prikazuje sve grafove.
+
+@details Ova metoda prikazuje sve grafove u GUI.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a43fb85a56f76a78f0aedd82e0009786d}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a43fb85a56f76a78f0aedd82e0009786d} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!show\_channel\_matrix\_popup@{show\_channel\_matrix\_popup}}
+\index{show\_channel\_matrix\_popup@{show\_channel\_matrix\_popup}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{show\_channel\_matrix\_popup()}{show\_channel\_matrix\_popup()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+show\+\_\+channel\+\_\+matrix\+\_\+popup (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Prikazuje popup prozor sa matricom kanala. 
+
+Ova metoda kreira i prikazuje popup prozor koji sadrži unose matrice kanala.
+
+\begin{DoxyVerb}@brief Prikazuje popup prozor sa matricom kanala.
+
+@details Ova metoda kreira i prikazuje popup prozor koji sadrži unose matrice kanala.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3c9b8582ecdd6c8aa9119e5ef89d4946}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a3c9b8582ecdd6c8aa9119e5ef89d4946} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!show\_help@{show\_help}}
+\index{show\_help@{show\_help}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{show\_help()}{show\_help()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+show\+\_\+help (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Prikazuje prozor za pomoć sa uputama o korištenju simulacije. 
+
+Ova metoda kreira i prikazuje prozor za pomoć sa uputama o korištenju simulacije.
+
+\begin{DoxyVerb}@brief Prikazuje prozor za pomoć sa uputama o korištenju simulacije.
+
+@details Ova metoda kreira i prikazuje prozor za pomoć sa uputama o korištenju simulacije.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aed38cf233ca9aecf4ce90b341c3e6705}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_aed38cf233ca9aecf4ce90b341c3e6705} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!simulate@{simulate}}
+\index{simulate@{simulate}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{simulate()}{simulate()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+simulate (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Izvršava QPSK MIMO simulaciju. 
+
+Ova metoda preuzima parametre simulacije iz GUI, izvršava simulaciju i ažurira GUI sa rezultatima.
+
+\begin{DoxyVerb}@brief Izvršava QPSK MIMO simulaciju.
+
+@details Ova metoda preuzima parametre simulacije iz GUI, izvršava simulaciju i ažurira GUI sa rezultatima.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ade8723aac4510c5ed2c9c3b0f205529a}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ade8723aac4510c5ed2c9c3b0f205529a} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!start\_simulation@{start\_simulation}}
+\index{start\_simulation@{start\_simulation}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{start\_simulation()}{start\_simulation()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+start\+\_\+simulation (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Pokreće proces simulacije. 
+
+Ova metoda inicira simulaciju postavljanjem unosa matrice kanala na uređivanje i pozivanjem metode simulacije.
+
+\begin{DoxyVerb}@brief Pokreće proces simulacije.
+
+@details Ova metoda inicira simulaciju postavljanjem unosa matrice kanala na uređivanje i pozivanjem metode simulacije.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a31160d40abe928234073bd593a5473a9}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a31160d40abe928234073bd593a5473a9} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!update\_channel\_matrix\_entry\_state@{update\_channel\_matrix\_entry\_state}}
+\index{update\_channel\_matrix\_entry\_state@{update\_channel\_matrix\_entry\_state}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{update\_channel\_matrix\_entry\_state()}{update\_channel\_matrix\_entry\_state()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+update\+\_\+channel\+\_\+matrix\+\_\+entry\+\_\+state (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Ažurira stanje unosa matrice kanala (samo za čitanje ili uređivanje). 
+
+Ova metoda ažurira stanje unosa matrice kanala na osnovu zastavice {\ttfamily channel\+\_\+matrix\+\_\+entry\+\_\+readonly}. Ako je {\ttfamily channel\+\_\+matrix\+\_\+entry\+\_\+readonly} True, unosi su postavljeni samo za čitanje, inače su postavljeni za uređivanje.
+
+\begin{DoxyVerb}@brief Ažurira stanje unosa matrice kanala (samo za čitanje ili uređivanje).
+
+@details Ova metoda ažurira stanje unosa matrice kanala na osnovu zastavice `channel_matrix_entry_readonly`. Ako je `channel_matrix_entry_readonly` True, unosi su postavljeni samo za čitanje, inače su postavljeni za uređivanje.
+\end{DoxyVerb}
+ \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a218c711cc9e1a77100f24cefeb9268a4}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a218c711cc9e1a77100f24cefeb9268a4} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!update\_channel\_matrix\_size@{update\_channel\_matrix\_size}}
+\index{update\_channel\_matrix\_size@{update\_channel\_matrix\_size}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{update\_channel\_matrix\_size()}{update\_channel\_matrix\_size()}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+update\+\_\+channel\+\_\+matrix\+\_\+size (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{event = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Događaj koji je pokrenuo ažuriranje.\\
+\hline
+\end{DoxyParams}
+Ova metoda ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena unesenih u GUI.
+
+\begin{DoxyVerb}@brief Ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena.
+
+@param event Događaj koji je pokrenuo ažuriranje.
+@details Ova metoda ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena unesenih u GUI.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a58d7354e322217f327466026b7126a17}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a58d7354e322217f327466026b7126a17} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!channel\_matrix\_entry\_readonly@{channel\_matrix\_entry\_readonly}}
+\index{channel\_matrix\_entry\_readonly@{channel\_matrix\_entry\_readonly}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{channel\_matrix\_entry\_readonly}{channel\_matrix\_entry\_readonly}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+channel\+\_\+matrix\+\_\+entry\+\_\+readonly}
+
+
+
+Resetuje sve grafove i rezultate simulacije. 
+
+Ova metoda briše sve grafove i resetuje rezultate simulacije na početne vrijednosti. Clear all plots \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad5964ce1be3febaf1e483d7a87d5527e}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_ad5964ce1be3febaf1e483d7a87d5527e} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!channel\_matrix\_popup@{channel\_matrix\_popup}}
+\index{channel\_matrix\_popup@{channel\_matrix\_popup}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{channel\_matrix\_popup}{channel\_matrix\_popup}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+channel\+\_\+matrix\+\_\+popup}
+
+
+
+Prikazuje popup prozor sa matricom kanala. 
+
+Ova metoda kreira i prikazuje popup prozor koji sadrži unose matrice kanala. \Hypertarget{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a93c411abd36ebcd90cec59df2135adbe}\label{classQPSK__MIMO_1_1QPSK__MIMO__GUI_a93c411abd36ebcd90cec59df2135adbe} 
+\index{QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}!master@{master}}
+\index{master@{master}!QPSK\_MIMO.QPSK\_MIMO\_GUI@{QPSK\_MIMO.QPSK\_MIMO\_GUI}}
+\doxysubsubsection{\texorpdfstring{master}{master}}
+{\footnotesize\ttfamily QPSK\+\_\+\+MIMO.\+QPSK\+\_\+\+MIMO\+\_\+\+GUI.\+master}
+
+
+
+Inicijalizira GUI za QPSK MIMO simulaciju. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Glavni prozor aplikacije.\\
+\hline
+\end{DoxyParams}
+Inicijalizira glavni prozor i sve GUI elemente potrebne za QPSK MIMO simulaciju. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Kodovi/QPSK\+\_\+\+MIMO.\+py\end{DoxyCompactItemize}

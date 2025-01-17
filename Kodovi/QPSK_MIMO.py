@@ -1,92 +1,109 @@
 import tkinter as tk
-from tkinter import ttk, Toplevel, Label, messagebox
+from tkinter import ttk, messagebox, Toplevel, Label
 import numpy as np
 import matplotlib
 matplotlib.use('TkAgg')
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
-from scipy import signal
-from numpy.linalg import svd, det, matrix_rank, inv
+from numpy.linalg import svd, det
 
-# Constants
-MIN_NUM_BITS = 100
-MAX_NUM_BITS = 10000
-MIN_SNR_DB = 0
-MAX_SNR_DB = 30
-MIN_NUM_ANTENNAS = 1
-MAX_NUM_ANTENNAS = 4
-MIN_NUM_MODES = 1
-MAX_NUM_MODES = 4
-MIN_FIBER_LENGTH = 1
-MAX_FIBER_LENGTH = 1000
-MIN_ATTENUATION = 0.1
-MAX_ATTENUATION = 1
+# Simulation Parameters
+        
 
-## @brief This class implements a tooltip for Tkinter widgets.
+## @brief Klasa koja implementira tooltip za Tkinter widgete.
 class ToolTip:
+    """
+    @brief Klasa koja implementira tooltip za Tkinter widgete.
+    """
     ## @brief Konstruktor za klasu ToolTip.
     ## @param widget Widget na koji se prikači tooltip.
     ## @param text Tekst koji se prikazuje u tooltipu.
+    ##
     ## @details Inicijalizira tooltip sa datim widgetom i tekstom, te povezuje događaje prikaza i sakrivanja.
     def __init__(self, widget, text):
         """
-        @brief Inicijalizira tooltip.
+        @brief Konstruktor klase ToolTip.
         
         @param widget Tkinter widget na koji se tooltip prikači.
         @param text Tekst koji se prikazuje u tooltipu.
+        
+        @details Inicijalizira tooltip sa datim widgetom i tekstom, te povezuje događaje miša za prikaz i sakrivanje tooltipa.
         """
+        ## @brief Inicijalizira tooltip.
+        ## @param widget Widget na koji se prikači tooltip.
+        ## @param text Tekst koji se prikazuje u tooltipu.
+        ##
+        ## @details Inicijalizira tooltip sa datim widgetom i tekstom, te povezuje događaje miša za prikaz i sakrivanje tooltipa.
         self.widget = widget
         self.text = text
         self.tooltip_window = None
-        self.widget.bind("<Enter>", self.show_tooltip)
-        self.widget.bind("<Leave>", self.hide_tooltip)
+        self.widget.bind("<Enter>", self.show)
+        self.widget.bind("<Leave>", self.hide)
 
     ## @brief Prikazuje tooltip prozor.
-    ## @param event Događaj koji je pokrenuo tooltip.
-    ## @details Ova metoda kreira i prikazuje tooltip prozor na trenutnoj poziciji miša.
-    def show_tooltip(self, event=None):
+    ## @param event Događaj koji je pokrenuo prikaz tooltipa (nije obavezno).
+    ##
+    ## @details Ova metoda izračunava poziciju tooltip prozora i prikazuje ga na ekranu.
+    def show(self, event=None):
         """
         @brief Prikazuje tooltip prozor.
         
-        @param event Događaj koji je pokrenuo tooltip.
-        @details Ova metoda kreira i prikazuje tooltip prozor na trenutnoj poziciji miša.
+        @param event Događaj koji je pokrenuo prikaz tooltipa (nije obavezno).
+        
+        @details Ova metoda izračunava poziciju tooltip prozora i prikazuje ga na ekranu.
         """
-        x, y, _, _ = self.widget.bbox("insert")
-        x += self.widget.winfo_rootx() + 25
-        y += self.widget.winfo_rooty() + 25
+        ## @brief Prikazuje tooltip prozor.
+        ## @param event Događaj koji je pokrenuo prikaz tooltipa (nije obavezno).
+        ##
+        ## @details Ova metoda izračunava poziciju tooltip prozora i prikazuje ga na ekranu.
+        if self.tooltip_window is None or not self.tooltip_window.winfo_exists():
+            x, y, _, _ = self.widget.bbox("insert")
+            x += self.widget.winfo_rootx() + self.TOOLTIP_OFFSET_X
+            y += self.widget.winfo_rooty() + self.TOOLTIP_OFFSET_Y
 
-        self.tooltip_window = Toplevel(self.widget)
-        self.tooltip_window.wm_overrideredirect(True)
-        self.tooltip_window.wm_geometry(f"+{x}+{y}")
+            self.tooltip_window = Toplevel(self.widget)
+            self.tooltip_window.wm_overrideredirect(True)
+            self.tooltip_window.wm_geometry(f"+{x}+{y}")
 
-        label = Label(self.tooltip_window, text=self.text, background="#ffffe0", relief="solid", borderwidth=1, padx=1, pady=1)
-        label.pack()
+            label = Label(self.tooltip_window, text=self.text, background="#ffffe0", relief="solid", borderwidth=1, padx=1, pady=1)
+            label.pack()
 
     ## @brief Sakriva tooltip prozor.
-    ## @param event Događaj koji je pokrenuo sakrivanje tooltippa.
-    ## @details Ova metoda uništava tooltip prozor kada miš napusti widget.
-    def hide_tooltip(self, event=None):
+    ## @param event Događaj koji je pokrenuo sakrivanje tooltipa (nije obavezno).
+    ##
+    ## @details Ova metoda uništava tooltip prozor ako postoji.
+    def hide(self, event=None):
         """
         @brief Sakriva tooltip prozor.
         
-        @param event Događaj koji je pokrenuo sakrivanje tooltippa.
-        @details Ova metoda uništava tooltip prozor kada miš napusti widget.
+        @param event Događaj koji je pokrenuo sakrivanje tooltipa (nije obavezno).
+        
+        @details Ova metoda uništava tooltip prozor ako postoji.
         """
+        ## @brief Sakriva tooltip prozor.
+        ## @param event Događaj koji je pokrenuo sakrivanje tooltipa (nije obavezno).
+        ##
+        ## @details Ova metoda uništava tooltip prozor ako postoji.
         if self.tooltip_window:
             self.tooltip_window.destroy()
+            self.tooltip_window = None
 
-## @brief This class implements the GUI for the QPSK MIMO simulation.
+## @brief Klasa koja implementira GUI za QPSK MIMO simulaciju.
 class QPSK_MIMO_GUI:
     ## @brief Konstruktor za klasu QPSK_MIMO_GUI.
-    ## @param master Roditeljski prozor.
+    ## @param master Glavni prozor.
     ## @details Inicijalizira glavni prozor i sve GUI elemente za QPSK MIMO simulaciju.
     def __init__(self, master):
         """
-        @brief Konstruktor za klasu QPSK_MIMO_GUI.
+        @brief Konstruktor klase QPSK_MIMO_GUI.
         
-        @param master Roditeljski prozor.
-        @details Inicijalizira glavni prozor i sve GUI elemente za QPSK MIMO simulaciju.
+        @param master Glavni prozor aplikacije.
+        
+        @details Inicijalizira glavni prozor i sve GUI elemente potrebne za QPSK MIMO simulaciju.
         """
+        ## @brief Inicijalizira GUI za QPSK MIMO simulaciju.
+        ## @param master Glavni prozor aplikacije.
+        ## @details Inicijalizira glavni prozor i sve GUI elemente potrebne za QPSK MIMO simulaciju.
         self.master = master
         master.title("QPSK MIMO Simulacija")
         # master.attributes('-fullscreen', True)  # Start in full-screen
@@ -97,17 +114,17 @@ class QPSK_MIMO_GUI:
         ToolTip(self.results_frame, "Prikazuje rezultate simulacije kao što su BER, SNR i kapacitet.")
 
         self.ber_label_text = tk.StringVar()
-        self.ber_label_text.set("BER: N/A")
+        self.ber_label_text.set("BER: NaN")
         self.ber_label = ttk.Label(self.results_frame, textvariable=self.ber_label_text)
         self.ber_label.pack(padx=5, pady=2)
 
         self.snr_result_label_text = tk.StringVar()
-        self.snr_result_label_text.set("SNR (dB): N/A")
+        self.snr_result_label_text.set("SNR (dB): NaN")
         self.snr_result_label = ttk.Label(self.results_frame, textvariable=self.snr_result_label_text)
         self.snr_result_label.pack(padx=5, pady=2)
 
         self.capacity_label_text = tk.StringVar()
-        self.capacity_label_text.set("Kapacitet (bps/Hz): N/A")
+        self.capacity_label_text.set("Kapacitet (bps/Hz): NaN")
         self.capacity_label = ttk.Label(self.results_frame, textvariable=self.capacity_label_text)
         self.capacity_label.pack(padx=5, pady=2)
 
@@ -116,11 +133,11 @@ class QPSK_MIMO_GUI:
         self.input_frame.pack(padx=10, pady=10, fill=tk.X, anchor=tk.NW, side=tk.TOP)
 
         # Number of bits
-        self.num_bits_label = ttk.Label(self.input_frame, text="Broj bita (100-10000):")
+        self.num_bits_label = ttk.Label(self.input_frame, text="Broj bita (100-1000):")
         self.num_bits_label.grid(row=0, column=0, padx=5, pady=5, sticky=tk.W)
         ToolTip(self.num_bits_label, "Ukupan broj generisanih bitova za simulaciju.")
         self.num_bits_entry = ttk.Entry(self.input_frame)
-        self.num_bits_entry.insert(0, "1000")
+        self.num_bits_entry.insert(0, "500")
         self.num_bits_entry.grid(row=0, column=1, padx=5, pady=5)
 
         # SNR (dB)
@@ -158,8 +175,8 @@ class QPSK_MIMO_GUI:
         self.num_modes_entry.grid(row=4, column=1, padx=5, pady=5)
         self.num_modes_entry.bind("<FocusOut>", self.update_channel_matrix_size)
 
-        # Matrica kanala
-        self.channel_label = ttk.Label(self.input_frame, text="Matrica kanala (H):")
+        # Kanalna matrica
+        self.channel_label = ttk.Label(self.input_frame, text="Kanalna matrica (H):")
         self.channel_label.grid(row=5, column=0, padx=5, pady=5, sticky=tk.W)
         ToolTip(self.channel_label, "Matrica koja opisuje propagaciju signala između predajnih i prijemnih antena/modova.")
         self.channel_matrix_button = ttk.Button(self.input_frame, text="Info", command=self.show_channel_matrix_popup)
@@ -167,7 +184,7 @@ class QPSK_MIMO_GUI:
         self.channel_matrix_entries = []
         self.channel_matrix_entry_readonly = True
 
-        # Duljina vlakna (km)
+        # Dužina vlakna (km)
         self.fiber_length_label = ttk.Label(self.input_frame, text="Dužina vlakna (km) (1-1000):")
         self.fiber_length_label.grid(row=6, column=0, padx=5, pady=5, sticky=tk.W)
         ToolTip(self.fiber_length_label, "Dužina optičkog vlakna u kilometrima.")
@@ -183,6 +200,12 @@ class QPSK_MIMO_GUI:
         self.attenuation_entry.insert(0, "0.2")
         self.attenuation_entry.grid(row=7, column=1, padx=5, pady=5)
 
+        # Crosstalk checkbox
+        self.crosstalk_var = tk.BooleanVar(value=False)
+        self.crosstalk_check = ttk.Checkbutton(self.input_frame, text="Preslušavanje", variable=self.crosstalk_var)
+        self.crosstalk_check.grid(row=8, column=0, columnspan=2, padx=5, pady=5, sticky=tk.W)
+        ToolTip(self.crosstalk_check, "Uključuje/isključuje preslušavanje između modova.")
+
         self.explain_button = ttk.Button(master, text="Objasni koncept", command=self.explain_concept)
         self.explain_button.pack(pady=5, side=tk.RIGHT, padx=10, anchor=tk.NE)
 
@@ -194,6 +217,11 @@ class QPSK_MIMO_GUI:
 
         self.reset_button = ttk.Button(master, text="Resetuj", command=self.reset_simulation)
         self.reset_button.pack(pady=5, side=tk.LEFT, padx=10, anchor=tk.NW)
+
+        # Loading label
+        self.loading_label = ttk.Label(master, text="Učitavanje...", font=("Arial", 16))
+        self.loading_label.pack(pady=5, side=tk.BOTTOM, anchor=tk.SW, padx=10)
+        self.loading_label.pack_forget()  # Initially hide the loading label
 
         # Notebook for tabs
         self.notebook = ttk.Notebook(master)
@@ -219,7 +247,7 @@ class QPSK_MIMO_GUI:
 
         # Tab 3: Channel Matrix
         self.channel_tab = ttk.Frame(self.notebook)
-        self.notebook.add(self.channel_tab, text="Matrica kanala")
+        self.notebook.add(self.channel_tab, text="Kanalna matrica")
         self.channel_figure, (self.channel_ax_mag, self.channel_ax_phase) = plt.subplots(1, 2, figsize=(10, 5))
         self.channel_canvas = FigureCanvasTkAgg(self.channel_figure, master=self.channel_tab)
         self.channel_canvas_widget = self.channel_canvas.get_tk_widget()
@@ -253,14 +281,14 @@ class QPSK_MIMO_GUI:
         self.snr_ber_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
         self.snr_ber_figure.tight_layout(pad=3.0)
 
-        # Tab 7: SNR vs Kapacitet
-        self.snr_capacity_tab = ttk.Frame(self.notebook)
-        self.notebook.add(self.snr_capacity_tab, text="SNR vs Kapacitet")
-        self.snr_capacity_figure, self.snr_capacity_ax = plt.subplots()
-        self.snr_capacity_canvas = FigureCanvasTkAgg(self.snr_capacity_figure, master=self.snr_capacity_tab)
-        self.snr_capacity_canvas_widget = self.snr_capacity_canvas.get_tk_widget()
-        self.snr_capacity_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
-        self.snr_capacity_figure.tight_layout(pad=3.0)
+        # Tab 7: Number of Modes vs BER
+        self.modes_ber_tab = ttk.Frame(self.notebook)
+        self.notebook.add(self.modes_ber_tab, text="Broj modova vs BER")
+        self.modes_ber_figure, self.modes_ber_ax = plt.subplots()
+        self.modes_ber_canvas = FigureCanvasTkAgg(self.modes_ber_figure, master=self.modes_ber_tab)
+        self.modes_ber_canvas_widget = self.modes_ber_canvas.get_tk_widget()
+        self.modes_ber_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        self.modes_ber_figure.tight_layout(pad=3.0)
 
         # Tab 8: Detaljno vlakno
         self.detailed_fiber_tab = ttk.Frame(self.notebook)
@@ -280,6 +308,57 @@ class QPSK_MIMO_GUI:
         self.channel_matrix_entries = []
         self.channel_matrix_entry_readonly = True
         self.channel_matrix_popup = None
+        self.COUPLING_COEFF = 0.01
+        self.DMD_COEFF = 0.001
+        self.SEED = 42
+        self.MIN_NUM_BITS = 100
+        self.MAX_NUM_BITS = 1000
+        self.MIN_SNR_DB = 0
+        self.MAX_SNR_DB = 30
+        self.MIN_NUM_ANTENNAS = 1
+        self.MAX_NUM_ANTENNAS = 4
+        self.MIN_NUM_MODES = 1
+        self.MAX_NUM_MODES = 4
+        self.MIN_FIBER_LENGTH = 1
+        self.MAX_FIBER_LENGTH = 1000
+        self.MIN_ATTENUATION = 0.1
+        self.MAX_ATTENUATION = 1
+        self.EYE_DIAGRAM_SYMBOLS = 2000
+        self.CONSTELLATION_MARGIN = 0.2
+        self.FIBER_PROPAGATION_POINTS = 100
+        self.FIBER_LENGTH_SCALE = 100
+        self.CROSSTALK_COEFF = 0.01
+        self.TOOLTIP_OFFSET_X = 25
+        self.TOOLTIP_OFFSET_Y = 25
+
+        # Initial draw of plots
+        self.show_all_plots()
+
+    ## @brief Sakriva sve grafove.
+    ## @details Ova metoda sakriva sve grafove u GUI.
+    def hide_all_plots(self):
+        """
+        @brief Sakriva sve grafove.
+        
+        @details Ova metoda sakriva sve grafove u GUI.
+        """
+
+    ## @brief Prikazuje sve grafove.
+    ## @details Ova metoda prikazuje sve grafove u GUI.
+    def show_all_plots(self):
+        """
+        @brief Prikazuje sve grafove.
+        
+        @details Ova metoda prikazuje sve grafove u GUI.
+        """
+        self.tx_signal_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        self.constellation_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        self.channel_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        self.eye_diagram_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        self.noise_impact_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        self.snr_ber_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        self.modes_ber_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        self.detailed_fiber_canvas_widget.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
     ## @brief Pokreće proces simulacije.
     ## @details Ova metoda inicira simulaciju postavljanjem unosa matrice kanala na uređivanje i pozivanjem metode simulacije.
@@ -287,10 +366,18 @@ class QPSK_MIMO_GUI:
         """
         @brief Pokreće proces simulacije.
         
-        @details Ova metoda pokreće simulaciju postavljanjem unosa matrice kanala na uređivanje i pozivanjem metode simulacije.
+        @details Ova metoda inicira simulaciju postavljanjem unosa matrice kanala na uređivanje i pozivanjem metode simulacije.
         """
-        self.channel_matrix_entry_readonly = False
-        self.simulate()
+        
+        self.loading_label.pack(side=tk.BOTTOM, anchor=tk.SW, padx=10, pady=5)
+        self.master.update()
+        self.simulate_button.config(state=tk.DISABLED)
+        try:
+            self.simulate()
+        except Exception as e:
+            messagebox.showerror("Greška", f"Došlo je do greške tijekom simulacije: {e}")
+        finally:
+            self.simulate_button.config(state=tk.NORMAL)
 
     ## @brief Generiše matricu kanala.
     ## @param num_tx_modes Broj predajnih modova.
@@ -317,28 +404,123 @@ class QPSK_MIMO_GUI:
         if seed is not None:
             np.random.seed(seed)
 
-        H = np.zeros((num_rx_modes, num_tx_modes), dtype=complex)
-
         # More realistic mode coupling matrix
-        coupling_matrix = np.zeros((num_rx_modes, num_tx_modes), dtype=complex)
-        for i in range(num_rx_modes):
-            for j in range(num_tx_modes):
-                coupling = coupling_coeff * np.exp(-((i - j) / 2)**2)  # Gaussian-like coupling
-                coupling_matrix[i, j] = coupling * (np.random.randn() + 1j * np.random.randn())
+        coupling_matrix = coupling_coeff * np.exp(-((np.arange(num_rx_modes)[:, None] - np.arange(num_tx_modes)) / 2)**2) * (np.random.randn(num_rx_modes, num_tx_modes) + 1j * np.random.randn(num_rx_modes, num_tx_modes))
         
         # Ensure the diagonal is 1
         np.fill_diagonal(coupling_matrix, 1)
-
-        # Differential mode delay (DMD) as a time delay
-        dmd_matrix = np.zeros((num_rx_modes, num_tx_modes), dtype=complex)
-        for i in range(num_rx_modes):
-            for j in range(num_tx_modes):
-                dmd_amount = dmd_coeff * (i - j)**2
-                # Apply a frequency-dependent phase shift
-                dmd_matrix[i, j] = np.exp(-1j * 2 * np.pi * dmd_amount)
+        
+        # Differential mode delay (DMD) as a phase shift
+        dmd_matrix = np.exp(-1j * dmd_coeff * (np.arange(num_rx_modes)[:, None] - np.arange(num_tx_modes))**2)
 
         H = np.dot(dmd_matrix, coupling_matrix)
         return H
+
+    ## @brief Izračunava Bit Error Rate (BER).
+    ## @param tx_bits Predajni bitovi.
+    ## @param demodulated_bits Demodulirani bitovi.
+    ## @return Izračunata BER vrijednost.
+    ## @details Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+    def calculate_ber(self, tx_bits, demodulated_bits):
+        """
+        @brief Calculates the Bit Error Rate (BER).
+        
+        @param tx_bits The transmitted bits.
+        @param demodulated_bits The demodulated bits.
+        @return The calculated BER value.
+        @details This method calculates the BER by comparing the transmitted and demodulated bits.
+        """
+        return self._calculate_ber(tx_bits, demodulated_bits)
+
+    ## @brief Izračunava Bit Error Rate (BER).
+    ## @param tx_bits Predajni bitovi.
+    ## @param demodulated_bits Demodulirani bitovi.
+    ## @return Izračunata BER vrijednost.
+    ## @details Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+    def _calculate_ber(self, tx_bits, demodulated_bits):
+        """
+        @brief Izračunava Bit Error Rate (BER).
+        
+        @param tx_bits Predajni bitovi.
+        @param demodulated_bits Demodulirani bitovi.
+        @return Izračunata BER vrijednost.
+        @details Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+        """
+        if len(tx_bits) == 0:
+            return np.nan
+        if len(demodulated_bits) == 0:
+            return 0
+        min_len = min(len(tx_bits), len(demodulated_bits))
+        return np.sum(np.array(tx_bits[:min_len]) != np.array(demodulated_bits[:min_len])) / len(tx_bits)
+
+    ## @brief Demodulira primljene simbole u bitove.
+    ## @param received_symbols Primljeni simboli.
+    ## @param mapping Rječnik QPSK mapiranja.
+    ## @param inverse_mapping Inverzni rječnik QPSK mapiranja.
+    ## @return Demodulirani bitovi.
+    ## @details Ova metoda demodulira primljene simbole u bitove koristeći pristup najbližeg susjeda.
+    def _demodulate_symbols(self, received_symbols, mapping, inverse_mapping):
+        """
+        @brief Demodulira primljene simbole u bitove.
+        
+        @param received_symbols Primljeni simboli.
+        @param mapping Rječnik QPSK mapiranja.
+        @param inverse_mapping Inverzni rječnik QPSK mapiranja.
+        @return Demodulirani bitovi.
+        @details Ova metoda demodulira primljene simbole u bitove koristeći pristup najbližeg susjeda.
+        """
+        ## @brief Demodulira primljene simbole u bitove.
+        ## @param received_symbols Primljeni simboli.
+        ## @param mapping Rječnik QPSK mapiranja.
+        ## @param inverse_mapping Inverzni rječnik QPSK mapiranja.
+        ## @return Demodulirani bitovi.
+        ## @details Ova metoda demodulira primljene simbole u bitove koristeći pristup najbližeg susjeda.
+        ref_symbols = np.array(list(mapping.values()))
+        
+        # Reshape received symbols to have the same number of rows as ref_symbols
+        received_symbols_reshaped = received_symbols.reshape(received_symbols.shape[0], -1)
+        
+        # Calculate distances between each received symbol and all reference symbols
+        distances = np.abs(received_symbols_reshaped[:, :, np.newaxis] - ref_symbols)**2
+        
+        # Find the index of the closest reference symbol for each received symbol
+        closest_indices = np.argmin(distances, axis=2)
+        
+        # Map the closest indices to the corresponding bits
+        demodulated_bits = []
+        for i in range(closest_indices.shape[0]):
+            for index in closest_indices[i]:
+                closest_symbol = ref_symbols[index]
+                demodulated_bits.extend(inverse_mapping[closest_symbol])
+        return demodulated_bits
+
+    ## @brief Izračunava Bit Error Rate (BER) za dati SNR.
+    ## @param tx_bits Predajni bitovi.
+    ## @param received_symbols Primljeni simboli.
+    ## @param mapping Rječnik QPSK mapiranja.
+    ## @param inverse_mapping Inverzni rječnik QPSK mapiranja.
+    ## @return Izračunata BER vrijednost.
+    ## @details Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+    def calculate_ber_for_snr(self, tx_bits, received_symbols, mapping, inverse_mapping):
+        """
+        @brief Izračunava Bit Error Rate (BER) za dati SNR.
+        
+        @param tx_bits Predajni bitovi.
+        @param received_symbols Primljeni simboli.
+        @param mapping Rječnik QPSK mapiranja.
+        @param inverse_mapping Inverzni rječnik QPSK mapiranja.
+        @return Izračunata BER vrijednost.
+        @details Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+        """
+        ## @brief Izračunava Bit Error Rate (BER) za dati SNR.
+        ## @param tx_bits Predajni bitovi.
+        ## @param received_symbols Primljeni simboli.
+        ## @param mapping Rječnik QPSK mapiranja.
+        ## @param inverse_mapping Inverzni rječnik QPSK mapiranja.
+        ## @return Izračunata BER vrijednost.
+        ## @details Ova metoda izračunava BER uspoređujući predajne i demodulirane bitove.
+        demodulated_bits_ber = self._demodulate_symbols(received_symbols, mapping, inverse_mapping)
+        return self._calculate_ber(tx_bits, demodulated_bits_ber)
 
     ## @brief Prikazuje prozor za pomoć sa uputama o korištenju simulacije.
     ## @details Ova metoda kreira i prikazuje prozor za pomoć sa uputama o korištenju simulacije.
@@ -348,6 +530,8 @@ class QPSK_MIMO_GUI:
         
         @details Ova metoda kreira i prikazuje prozor za pomoć sa uputama o korištenju simulacije.
         """
+        ## @brief Prikazuje prozor za pomoć sa uputama o korištenju simulacije.
+        ## @details Ova metoda kreira i prikazuje prozor za pomoć sa uputama o korištenju simulacije.
         help_text = """
         Ovaj program simulira QPSK MIMO sistem zasnovan na višemodnom optičkom vlaknu.
 
@@ -357,7 +541,7 @@ class QPSK_MIMO_GUI:
         - **Broj predajnih antena:** Broj predajnih antena u MIMO sistemu.
         - **Broj prijemnih antena:** Broj prijemnih antena u MIMO sistemu.
         - **Broj modova:** Broj prostornih modova u vlaknu.
-        - **Matrica kanala (H):** Matrica koja opisuje propagaciju signala između predajnih i prijemnih antena/modova.
+        - **Kanalna matrica (H):** Matrica koja opisuje propagaciju signala između predajnih i prijemnih antena/modova.
         - **Dužina vlakna (km):** Dužina optičkog vlakna u kilometrima.
         - **Koef. slabljenja (dB/km):** Koeficijent slabljenja signala po kilometru vlakna.
 
@@ -373,7 +557,7 @@ class QPSK_MIMO_GUI:
         - **Eye Dijagram:** Prikazuje eye dijagram primljenog signala.
         - **Utjecaj šuma na signal:** Prikazuje utjecaj šuma na odašiljani i primljeni signal.
         - **SNR vs BER:** Prikazuje ovisnost BER o SNR.
-        - **SNR vs Kapacitet:** Prikazuje ovisnost kapaciteta o SNR.
+        - **Broj modova vs BER:** Prikazuje ovisnost BER o broju modova.
         - **Detaljni prikaz vlakna:** Prikazuje slabljenje signala duž vlakna.
 
 
@@ -396,38 +580,8 @@ class QPSK_MIMO_GUI:
         
         @details Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
         """
-        explanation = """
-        QPSK MIMO modulacija zasnovana na višemodnom optičkom vlaknu koristi se za slanje podataka kodiranjem u fazu signala (QPSK) i korištenjem više prostornih modova svjetlosti u vlaknu (MIMO).
-
-        * **QPSK (Quadrature Phase-Shift Keying):**  Digitalna modulacijska tehnika gdje se dva bita podataka kodiraju u četiri moguće faze nosivog signala.
-
-        * **MIMO (Multiple-Input Multiple-Output):** Komunikacijski sistem koji koristi više predajnih i prijemnih antena za povećanje propusnosti podataka i pouzdanosti. U kontekstu višemodnog vlakna, različiti prostorni modovi svjetlosti se tretiraju kao nezavisni kanali.
-
-        * **Višemodno optičko vlakno (Multimode optical fiber):** Optičko vlakno koje može prenositi više svjetlosnih zraka (modova) istovremeno. Svaki mod se može koristiti kao nezavisni kanal u MIMO sistemu.
-
-        **Uloga Python biblioteka:**
-
-        * **NumPy:** Koristi se za matematičke operacije nad signalima i matricama kanala. Na primjer, za generisanje signala, manipulaciju matricama kanala i proračun performansi.
-
-        * **Matplotlib:** Koristi se za vizualizaciju rezultata, kao što su konstelacijski dijagrami moduliranih signala, grafovi performansi sistema (npr. BER u odnosu na SNR) i prikaz prostornih modova.
-
-        * **SciPy:** Koristi se za naprednije funkcije obrade signala, kao što su filtriranje, transformacije (npr. FFT za analizu frekvencijskog spektra) i potencijalno za modeliranje propagacije svjetlosti kroz vlakno (iako je to složenije i može zahtijevati specijalizirane biblioteke).
-
-        Ova simulacija će demonstrirati osnovni QPSK modulator i prikazati konstelacijski dijagram. Za potpunu MIMO simulaciju sa višemodnim vlaknom, potrebno je modelirati propagaciju kroz vlakno i efekte miješanja modova.
-        """
-        explanation_window = tk.Toplevel(self.master)
-        explanation_window.title("Objašnjenje koncepta")
-        explanation_label = ttk.Label(explanation_window, text=explanation, wraplength=500)
-        explanation_label.pack(padx=10, pady=10)
-
-    ## @brief Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu.
-    ## @details Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
-    def explain_concept(self):
-        """
-        @brief Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu.
-        
-        @details Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
-        """
+        ## @brief Prikazuje prozor koji objašnjava koncept QPSK MIMO modulacije u višemodnom vlaknu.
+        ## @details Ova metoda kreira i prikazuje prozor sa detaljnim objašnjenjem QPSK MIMO koncepta u višemodnom vlaknu.
         explanation = """
         QPSK MIMO modulacija zasnovana na višemodnom optičkom vlaknu koristi se za slanje podataka kodiranjem u fazu signala (QPSK) i korištenjem više prostornih modova svjetlosti u vlaknu (MIMO).
 
@@ -463,14 +617,50 @@ class QPSK_MIMO_GUI:
         self.channel_canvas.draw()
         self.snr_ber_ax.clear()
         self.snr_ber_canvas.draw()
-        self.snr_capacity_ax.clear()
-        self.snr_capacity_canvas.draw()
+        self.modes_ber_ax.clear()
+        self.modes_ber_canvas.draw()
         self.noise_impact_ax.clear()
+        self.noise_impact_canvas.draw()
+        self.detailed_fiber_ax.clear()
+        self.detailed_fiber_canvas.draw()
+        # Close all figures
+        if hasattr(self, 'tx_signal_figure') and self.tx_signal_figure:
+            plt.close(self.tx_signal_figure)
+        if hasattr(self, 'constellation_figure') and self.constellation_figure:
+            plt.close(self.constellation_figure)
+        if hasattr(self, 'channel_figure') and self.channel_figure:
+            plt.close(self.channel_figure)
+        if hasattr(self, 'eye_diagram_figure') and self.eye_diagram_figure:
+            plt.close(self.eye_diagram_figure)
+        if hasattr(self, 'noise_impact_figure') and self.noise_impact_figure:
+            plt.close(self.noise_impact_figure)
+        if hasattr(self, 'snr_ber_figure') and self.snr_ber_figure:
+            plt.close(self.snr_ber_figure)
+        if hasattr(self, 'modes_ber_figure') and self.modes_ber_figure:
+            plt.close(self.modes_ber_figure)
+        if hasattr(self, 'detailed_fiber_figure') and self.detailed_fiber_figure:
+            plt.close(self.detailed_fiber_figure)
+
+        # Clear all plots
+        self.tx_signal_ax.clear()
+        self.tx_signal_canvas.draw()
+        self.constellation_ax.clear()
+        self.constellation_canvas.draw()
+        self.channel_ax_mag.clear()
+        self.channel_ax_phase.clear()
+        self.channel_canvas.draw()
+        self.snr_ber_ax.clear()
+        self.snr_ber_canvas.draw()
+        self.modes_ber_ax.clear()
+        self.modes_ber_canvas.draw()
+        self.noise_impact_ax_real.clear()
+        self.noise_impact_ax_imag.clear()
         self.noise_impact_canvas.draw()
         self.detailed_fiber_ax.clear()
         self.detailed_fiber_canvas.draw()
         self.eye_diagram_ax_before.clear()
         self.eye_diagram_ax_after.clear()
+        self.eye_diagram_canvas.draw()
         if self.fiber_propagation_ax:
             self.fiber_propagation_ax.clear()
             self.fiber_propagation_canvas.draw()
@@ -479,19 +669,21 @@ class QPSK_MIMO_GUI:
 
 
         # Reset result labels
-        self.ber_label_text.set("BER: N/A")
-        self.snr_result_label_text.set("SNR (dB): N/A")
-        self.capacity_label_text.set("Kapacitet (bps/Hz): N/A")
+        self.ber_label_text.set("BER: NaN")
+        self.snr_result_label_text.set("SNR (dB): NaN")
+        self.capacity_label_text.set("Kapacitet (bps/Hz): NaN")
         self.channel_matrix_displayed = False
 
-    ## @brief Resetuje simulaciju brisanjem svih grafova i rezultata.
-    ## @details Ova metoda briše sve grafove i resetuje labele rezultata na njihova početna stanja.
+    ## @brief Resetuje sve grafove i rezultate simulacije.
+    ## @details Ova metoda briše sve grafove i resetuje rezultate simulacije na početne vrijednosti.
     def reset_simulation(self):
         """
-        @brief Resetuje simulaciju brisanjem svih grafova i rezultata.
+        @brief Resetuje sve grafove i rezultate simulacije.
         
-        @details Ova metoda briše sve grafove i resetuje labele rezultata na njihova početna stanja.
+        @details Ova metoda briše sve grafove i resetuje rezultate simulacije na početne vrijednosti.
         """
+        ## @brief Resetuje sve grafove i rezultate simulacije.
+        ## @details Ova metoda briše sve grafove i resetuje rezultate simulacije na početne vrijednosti.
         # Clear all plots
         self.tx_signal_ax.clear()
         self.tx_signal_canvas.draw()
@@ -502,14 +694,18 @@ class QPSK_MIMO_GUI:
         self.channel_canvas.draw()
         self.snr_ber_ax.clear()
         self.snr_ber_canvas.draw()
-        self.snr_capacity_ax.clear()
-        self.snr_capacity_canvas.draw()
-        self.noise_impact_ax.clear()
+        self.modes_ber_ax.clear()
+        self.modes_ber_canvas.draw()
+        self.noise_impact_ax_real.clear()
+        self.noise_impact_ax_imag.clear()
         self.noise_impact_canvas.draw()
         self.detailed_fiber_ax.clear()
         self.detailed_fiber_canvas.draw()
         self.eye_diagram_ax_before.clear()
         self.eye_diagram_ax_after.clear()
+        self.eye_diagram_canvas.draw()
+        self.tx_signal_time_ax.clear()
+        self.tx_signal_canvas.draw()
         if self.fiber_propagation_ax:
             self.fiber_propagation_ax.clear()
             self.fiber_propagation_canvas.draw()
@@ -518,9 +714,9 @@ class QPSK_MIMO_GUI:
 
 
         # Reset result labels
-        self.ber_label_text.set("BER: N/A")
-        self.snr_result_label_text.set("SNR (dB): N/A")
-        self.capacity_label_text.set("Kapacitet (bps/Hz): N/A")
+        self.ber_label_text.set("BER: NaN")
+        self.snr_result_label_text.set("SNR (dB): NaN")
+        self.capacity_label_text.set("Kapacitet (bps/Hz): NaN")
         self.channel_matrix_displayed = False
 
     ## @brief Ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena.
@@ -533,6 +729,9 @@ class QPSK_MIMO_GUI:
         @param event Događaj koji je pokrenuo ažuriranje.
         @details Ova metoda ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena unesenih u GUI.
         """
+        ## @brief Ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena.
+        ## @param event Događaj koji je pokrenuo ažuriranje.
+        ## @details Ova metoda ažurira veličinu matrice kanala na osnovu broja modova, predajnih i prijemnih antena unesenih u GUI.
         try:
             num_modes = int(self.num_modes_entry.get())
             if not 1 <= num_modes <= 4:
@@ -562,19 +761,9 @@ class QPSK_MIMO_GUI:
             # Adjust figure size to fit the new matrix
             self.channel_figure.set_size_inches(max(new_matrix_size[1] * 1.2, 6), max(new_matrix_size[0] * 0.8, 4))
             self.channel_figure.tight_layout()
-            
-            default_matrix = np.eye(min(new_matrix_size))
-            
-            if new_matrix_size[0] > new_matrix_size[1]:
-                padding_rows = new_matrix_size[0] - new_matrix_size[1]
-                padding = np.zeros((padding_rows, new_matrix_size[1]))
-                default_matrix = np.vstack((default_matrix, padding))
-            elif new_matrix_size[1] > new_matrix_size[0]:
-                padding_cols = new_matrix_size[1] - new_matrix_size[0]
-                padding = np.zeros((new_matrix_size[0], padding_cols))
-                default_matrix = np.hstack((default_matrix, padding))
-            
-            self.create_channel_matrix_entries(default_matrix.tolist(), None)
+            default_matrix = np.zeros(new_matrix_size, dtype=complex)
+            np.fill_diagonal(default_matrix, 1)
+            self.create_channel_matrix_entries(default_matrix.tolist(), None, None)
         except ValueError:
             messagebox.showerror("Greška", "Neispravan unos za broj modova.")
             self.num_modes_entry.delete(0, tk.END)
@@ -586,17 +775,19 @@ class QPSK_MIMO_GUI:
     def simulate(self):
         """
         @brief Izvršava QPSK MIMO simulaciju.
-
+        
         @details Ova metoda preuzima parametre simulacije iz GUI, izvršava simulaciju i ažurira GUI sa rezultatima.
         """
+        ## @brief Izvršava QPSK MIMO simulaciju.
+        ## @details Ova metoda preuzima parametre simulacije iz GUI, izvršava simulaciju i ažurira GUI sa rezultatima.
         # Dohvati parametre simulacije iz GUI
         try:
             num_bits = int(self.num_bits_entry.get())
         except ValueError:
             messagebox.showerror("Greška", "Broj bita mora biti cijeli broj.")
             return
-        if not MIN_NUM_BITS <= num_bits <= MAX_NUM_BITS:
-            messagebox.showerror("Greška", f"Broj bita mora biti između {MIN_NUM_BITS} i {MAX_NUM_BITS}.")
+        if not self.MIN_NUM_BITS <= num_bits <= self.MAX_NUM_BITS:
+            messagebox.showerror("Greška", f"Broj bita mora biti između {self.MIN_NUM_BITS} i {self.MAX_NUM_BITS}.")
             return
 
         try:
@@ -604,8 +795,8 @@ class QPSK_MIMO_GUI:
         except ValueError:
              messagebox.showerror("Greška", "SNR mora biti broj.")
              return
-        if not MIN_SNR_DB <= snr_db <= MAX_SNR_DB:
-            messagebox.showerror("Greška", f"SNR mora biti između {MIN_SNR_DB} i {MAX_SNR_DB} dB.")
+        if not self.MIN_SNR_DB <= snr_db <= self.MAX_SNR_DB:
+            messagebox.showerror("Greška", f"SNR mora biti između {self.MIN_SNR_DB} i {self.MAX_SNR_DB} dB.")
             return
 
         try:
@@ -613,8 +804,8 @@ class QPSK_MIMO_GUI:
         except ValueError:
             messagebox.showerror("Greška", "Dužina vlakna mora biti broj.")
             return
-        if not MIN_FIBER_LENGTH <= fiber_length <= MAX_FIBER_LENGTH:
-            messagebox.showerror("Greška", f"Dužina vlakna mora biti između {MIN_FIBER_LENGTH} i {MAX_FIBER_LENGTH} km.")
+        if not self.MIN_FIBER_LENGTH <= fiber_length <= self.MAX_FIBER_LENGTH:
+            messagebox.showerror("Greška", f"Dužina vlakna mora biti između {self.MIN_FIBER_LENGTH} i {self.MAX_FIBER_LENGTH} km.")
             return
 
         try:
@@ -622,21 +813,21 @@ class QPSK_MIMO_GUI:
         except ValueError:
             messagebox.showerror("Greška", "Koeficijent slabljenja mora biti broj.")
             return
-        if not MIN_ATTENUATION <= attenuation <= MAX_ATTENUATION:
-            messagebox.showerror("Greška", f"Koeficijent slabljenja mora biti između {MIN_ATTENUATION} i {MAX_ATTENUATION} dB/km.")
+        if not self.MIN_ATTENUATION <= attenuation <= self.MAX_ATTENUATION:
+            messagebox.showerror("Greška", f"Koeficijent slabljenja mora biti između {self.MIN_ATTENUATION} i {self.MAX_ATTENUATION} dB/km.")
             return
 
         num_modes = int(self.num_modes_entry.get())
-        if not 1 <= num_modes <= 4:
+        if not self.MIN_NUM_MODES <= num_modes <= self.MAX_NUM_MODES:
             messagebox.showerror("Greška", "Broj modova mora biti između 1 i 4.")
             return
 
         num_tx_antennas = int(self.num_tx_ant_entry.get())
-        if not 1 <= num_tx_antennas <= 4:
+        if not self.MIN_NUM_ANTENNAS <= num_tx_antennas <= self.MAX_NUM_ANTENNAS:
             messagebox.showerror("Greška", "Broj predajnih antena mora biti između 1 i 4.")
             return
         num_rx_antennas = int(self.num_rx_ant_entry.get())
-        if not 1 <= num_rx_antennas <= 4:
+        if not self.MIN_NUM_ANTENNAS <= num_rx_antennas <= self.MAX_NUM_ANTENNAS:
             messagebox.showerror("Greška", "Broj prijemnih antena mora biti između 1 i 4.")
             return
         
@@ -645,14 +836,12 @@ class QPSK_MIMO_GUI:
 
         num_tx_modes = num_tx_antennas * num_modes
         num_rx_modes = num_rx_antennas * num_modes
-        coupling_coeff = 0.01 * np.sqrt(fiber_length / 100)  # Non-linear scaling
-        dmd_coeff = 0.001 * np.sqrt(fiber_length / 100) # Non-linear scaling
+        coupling_coeff = self.COUPLING_COEFF * np.sqrt(fiber_length / self.FIBER_LENGTH_SCALE)  # Non-linear scaling
+        dmd_coeff = self.DMD_COEFF * np.sqrt(fiber_length / self.FIBER_LENGTH_SCALE) # Non-linear scaling
         
         H = self.get_channel_matrix_from_entries()
-        if H is None:
-            return
-        if H.shape != (num_rx_modes, num_tx_modes):
-            H = self.generate_channel_matrix(num_tx_modes, num_rx_modes, fiber_length, seed=42, coupling_coeff=coupling_coeff, dmd_coeff=dmd_coeff)
+        if H.size == 0:
+            H = self.generate_channel_matrix(num_tx_modes, num_rx_modes, fiber_length, seed=self.SEED, coupling_coeff=coupling_coeff, dmd_coeff=dmd_coeff)
 
         bits = np.random.randint(0, 2, num_bits)
 
@@ -664,37 +853,35 @@ class QPSK_MIMO_GUI:
             (1, 1): complex(-1/np.sqrt(2), -1/np.sqrt(2))  # 11 -> -1-j
         }
         inverse_mapping = {v: k for k, v in mapping.items()}
-
-        qpsk_symbols = []
-        tx_bits = []
-        for i in range(0, len(bits), 2):
-            if i + 1 < len(bits):
-                tx_bits.extend([bits[i], bits[i+1]])
-                symbol = mapping[(bits[i], bits[i+1])]
-                qpsk_symbols.append(symbol)
-
-        qpsk_symbols = np.array(qpsk_symbols)
+        
+        # Pre-calculate QPSK symbols
+        qpsk_symbols = np.array(list(mapping.values()))
+        
+        # Generate transmit bits
+        tx_bits = bits[:(len(bits) // 2) * 2]
+        
+        # Map bits to QPSK symbols
+        qpsk_symbol_indices = np.array(tx_bits).reshape(-1, 2)
+        qpsk_symbols_mapped = np.array([mapping[tuple(index)] for index in qpsk_symbol_indices])
 
         # MIMO dio
-        tx_signals = np.tile(qpsk_symbols, (num_tx_antennas * num_modes, 1))
+        mode_bits = np.random.randint(0, 2, (num_tx_modes, len(tx_bits)))
+        mode_symbols = np.array([mapping[tuple(bits)] for bits in mode_bits.reshape(num_tx_modes, -1, 2).transpose(0, 2, 1).reshape(-1, 2)]).reshape(num_tx_modes, -1)
+        tx_signals = mode_symbols
 
-        # Mode coupling matrix (more realistic)
-        coupling_strength = 0.1 * (fiber_length / 100)  # Coupling strength increases with fiber length
-        coupling_matrix = np.eye(num_tx_antennas * num_modes) + coupling_strength * np.random.randn(num_tx_antennas * num_modes, num_tx_antennas * num_modes)
-        tx_signals_coupled = np.dot(coupling_matrix, tx_signals)
+        # Apply channel matrix
+        rx_signals = np.dot(H, tx_signals)
 
-        # Modal dispersion (more realistic)
-        num_symbols = tx_signals_coupled.shape[1]
-        freq = np.fft.fftfreq(num_symbols)
-        delayed_signals = np.zeros_like(tx_signals_coupled, dtype=complex)
-        for mode_idx in range(num_tx_antennas * num_modes):
-            mode_signal_fft = np.fft.fft(tx_signals_coupled[mode_idx, :])
-            transfer_function = H[mode_idx, mode_idx]
-            delayed_mode_signal = np.fft.ifft(mode_signal_fft * transfer_function)
-            delayed_signals[mode_idx, :] = delayed_mode_signal
-
-        # Prijem signala
-        rx_signals = np.dot(H, delayed_signals)
+        # Add crosstalk
+        if self.crosstalk_var.get():
+            # Create a matrix of random complex numbers for crosstalk
+            crosstalk_matrix = self.CROSSTALK_COEFF * (np.random.randn(num_rx_modes, num_rx_modes) + 1j * np.random.randn(num_rx_modes, num_rx_modes))
+            
+            # Set diagonal elements to 0 to avoid self-crosstalk
+            np.fill_diagonal(crosstalk_matrix, 0)
+            
+            # Apply crosstalk using matrix multiplication
+            rx_signals += np.dot(crosstalk_matrix, rx_signals)
 
         # Calculate signal power before adding noise
         signal_power = np.mean(np.abs(rx_signals)**2)
@@ -718,40 +905,23 @@ class QPSK_MIMO_GUI:
             self.equalized_symbols = self.received_symbols
 
         # Demodulacija (nearest neighbor)
-        demodulated_bits = []
-        for rx_signal in self.equalized_symbols.T:
-            for symbol in rx_signal:
-                min_dist = float('inf')
-                closest_symbol = None
-                for ref_symbol in mapping.values():
-                    dist = np.abs(symbol - ref_symbol)**2
-                    if dist < min_dist:
-                        min_dist = dist
-                        closest_symbol = ref_symbol
-                if closest_symbol is not None:
-                    demodulated_bits.extend(inverse_mapping[closest_symbol])
+        demodulated_bits = self._demodulate_symbols(self.equalized_symbols, mapping, inverse_mapping)
 
         # Proračun BER
-        ber_point = np.nan
         if len(tx_bits) > 0:
-            ber_point = np.sum(np.array(tx_bits) != np.array(demodulated_bits[:len(tx_bits)])) / len(tx_bits)
+            ber_point = np.mean(np.array(tx_bits) != np.array(demodulated_bits[:len(tx_bits)]))
             self.ber_label_text.set(f"BER: {ber_point:.4f}")
         else:
-            self.ber_label_text.set("BER: N/A")
+            self.ber_label_text.set("BER: NaN")
 
         self.snr_result_label_text.set(f"SNR (dB): {snr_db:.2f}")
 
-        # Proračun kapaciteta (koristeći SVD)
-        if num_rx_antennas * num_modes > 0 and num_tx_antennas * num_modes > 0:
-            U, s, V = svd(H)
-            capacity_point = 0
-            snr_linear = 10**(snr_db / 10)
-            for singular_value in s:
-                capacity_point += np.log2(1 + (snr_linear / (num_tx_antennas * num_modes)) * (singular_value**2))
-            self.capacity_label_text.set(f"Kapacitet (bps/Hz): {capacity_point:.2f}")
-        else:
-            self.capacity_label_text.set("Kapacitet (bps/Hz): N/A")
-        self.channel_matrix_entry_readonly = True
+        # Calculate MSE
+        mse = np.mean(np.abs(self.equalized_symbols - tx_signals)**2)
+
+        # Calculate EVM
+        evm = np.sqrt(np.mean(np.abs(self.equalized_symbols - tx_signals)**2) / np.mean(np.abs(tx_signals)**2))
+        self.capacity_label_text.set(f"Kapacitet (bps/Hz): NaN")
 
         # Prikaz odasiljanog signala (prva antena)
         self.tx_signal_ax.clear()
@@ -787,81 +957,74 @@ class QPSK_MIMO_GUI:
         ideal_points = list(mapping.values())
         self.constellation_ax.plot([p.real for p in ideal_points], [p.imag for p in ideal_points], 'r*', markersize=10, label='Idealni simboli')
         
-        for i in range(int(self.num_rx_ant_entry.get()) * int(self.num_modes_entry.get())):
-            self.constellation_ax.plot(self.received_symbols[i].real, self.received_symbols[i].imag, '.', label=f'Primljeni simboli (Prijemnik {i+1})')
+        if self.received_symbols.size > 0:
+            num_rx_modes = int(self.num_rx_ant_entry.get()) * int(self.num_modes_entry.get())
+            for i in range(num_rx_modes):
+                self.constellation_ax.plot(self.received_symbols[i].real, self.received_symbols[i].imag, '.', label=f'Primljeni simboli (Prijemnik {i+1})')
 
-
+            # Calculate plot limits with a margin
+            all_real = np.concatenate([self.received_symbols[i].real for i in range(num_rx_modes)])
+            all_imag = np.concatenate([self.received_symbols[i].imag for i in range(num_rx_modes)])
+            
+            margin_x = self.CONSTELLATION_MARGIN * (max(all_real) - min(all_real))
+            margin_y = self.CONSTELLATION_MARGIN * (max(all_imag) - min(all_imag))
+            
+            self.constellation_ax.set_xlim(min(all_real) - margin_x, max(all_real) + margin_x)
+            self.constellation_ax.set_ylim(min(all_imag) - margin_y, max(all_imag) + margin_y)
+        else:
+            self.constellation_ax.set_xlim(-2, 2)
+            self.constellation_ax.set_ylim(-2, 2)
+        
         self.constellation_ax.set_xlabel('In-phase')
         self.constellation_ax.set_ylabel('Quadrature')
         self.constellation_ax.set_title('Konstelacijski dijagram (QPSK MIMO)')
-        
-        # Calculate plot limits with a margin
-        all_real = np.concatenate([self.received_symbols[i].real for i in range(int(self.num_rx_ant_entry.get()) * int(self.num_modes_entry.get()))])
-        all_imag = np.concatenate([self.received_symbols[i].imag for i in range(int(self.num_rx_ant_entry.get()) * int(self.num_modes_entry.get()))])
-        
-        margin_x = 0.2 * (max(all_real) - min(all_real))
-        margin_y = 0.25 * (max(all_imag) - min(all_imag))
-        
-        self.constellation_ax.set_xlim(min(all_real) - margin_x, max(all_real) + margin_x)
-        self.constellation_ax.set_ylim(min(all_imag) - margin_y, max(all_imag) + margin_y)
-        
         self.constellation_ax.grid(True)
         self.constellation_ax.legend()
         self.constellation_canvas.draw()
         self.constellation_figure.tight_layout(pad=3.0)
 
         # Prikaz matrice kanala
-        if not self.channel_matrix_displayed:
-            if num_rx_antennas * num_modes > 0 and num_tx_antennas * num_modes > 0:
-                # Magnitude plot
-                im_mag = self.channel_ax_mag.imshow(np.abs(H), cmap='viridis')
-                self.channel_figure.colorbar(im_mag, ax=self.channel_ax_mag, fraction=0.046, pad=0.04, label='Amplituda')
-                self.channel_ax_mag.set_xticks(np.arange(num_tx_antennas * num_modes))
-                self.channel_ax_mag.set_yticks(np.arange(num_rx_antennas * num_modes))
-                self.channel_ax_mag.set_xlabel('Predajni elementi')
-                self.channel_ax_mag.set_ylabel('Prijemni elementi')
-                self.channel_ax_mag.set_title('Magnituda matrice kanala (H)')
-                self.channel_ax_mag.set_xlim(0, num_tx_antennas * num_modes - 1)
-                self.channel_ax_mag.set_ylim(num_rx_antennas * num_modes - 1, 0)
+        if num_rx_antennas * num_modes > 0 and num_tx_antennas * num_modes > 0:
+            # Magnitude plot
+            im_mag = self.channel_ax_mag.imshow(np.abs(H), cmap='viridis')
+            self.channel_figure.colorbar(im_mag, ax=self.channel_ax_mag, fraction=0.046, pad=0.04, label='Amplituda')
+            self.channel_ax_mag.set_xticks(np.arange(num_tx_antennas * num_modes))
+            self.channel_ax_mag.set_yticks(np.arange(num_rx_antennas * num_modes))
+            self.channel_ax_mag.set_xlabel('Predajni elementi')
+            self.channel_ax_mag.set_ylabel('Prijemni elementi')
+            self.channel_ax_mag.set_title('Magnituda kanalne matrice (H)')
+            self.channel_ax_mag.set_xlim(0, num_tx_antennas * num_modes - 1)
+            self.channel_ax_mag.set_ylim(num_rx_antennas * num_modes - 1, 0)
 
-                # Phase plot
-                im_phase = self.channel_ax_phase.imshow(np.angle(H), cmap='twilight')
-                self.channel_figure.colorbar(im_phase, ax=self.channel_ax_phase, fraction=0.046, pad=0.04, label='Faza (rad)')
-                self.channel_ax_phase.set_xticks(np.arange(num_tx_antennas * num_modes))
-                self.channel_ax_phase.set_yticks(np.arange(num_rx_antennas * num_modes))
-                self.channel_ax_phase.set_xlabel('Predajni elementi')
-                self.channel_ax_phase.set_ylabel('Prijemni elementi')
-                self.channel_ax_phase.set_title('Faza matrice kanala (H)')
-                self.channel_ax_phase.set_xlim(0, num_tx_antennas * num_modes - 1)
-                self.channel_ax_phase.set_ylim(num_rx_antennas * num_modes - 1, 0)
-            self.channel_canvas.draw()
-            self.channel_matrix_displayed = True
+            # Phase plot
+            im_phase = self.channel_ax_phase.imshow(np.angle(H), cmap='twilight')
+            self.channel_figure.colorbar(im_phase, ax=self.channel_ax_phase, fraction=0.046, pad=0.04, label='Faza (rad)')
+            self.channel_ax_phase.set_xticks(np.arange(num_tx_antennas * num_modes))
+            self.channel_ax_phase.set_yticks(np.arange(num_rx_antennas * num_modes))
+            self.channel_ax_phase.set_xlabel('Predajni elementi')
+            self.channel_ax_phase.set_ylabel('Prijemni elementi')
+            self.channel_ax_phase.set_title('Faza kanalne matrice (H)')
+            self.channel_ax_phase.set_xlim(0, num_tx_antennas * num_modes - 1)
+            self.channel_ax_phase.set_ylim(num_rx_antennas * num_modes - 1, 0)
+        self.channel_canvas.draw()
         
         # SNR vs BER plot
         snr_db_range = np.linspace(0, 20, 10)
+        num_noise_realizations = 10  # Number of noise realizations for averaging
         ber_values = []
         for current_snr_db in snr_db_range:
             snr_linear = 10**(current_snr_db / 10)
             noise_power = signal_power / snr_linear
             noise_std = np.sqrt(noise_power / 2)
-            noise = noise_std * (np.random.randn(*rx_signals.shape) + 1j * np.random.randn(*rx_signals.shape))
+            
+            # Generate noise for all realizations at once
+            noise = noise_std * (np.random.randn(num_noise_realizations, *rx_signals.shape) + 1j * np.random.randn(num_noise_realizations, *rx_signals.shape))
+            
             received_symbols_ber = rx_signals + noise
-            demodulated_bits_ber = []
-            for rx_signal in received_symbols_ber.T:
-                for symbol in rx_signal:
-                    min_dist = float('inf')
-                    closest_symbol = None
-                    for ref_symbol in mapping.values():
-                        dist = np.abs(symbol - ref_symbol)**2
-                        if dist < min_dist:
-                            min_dist = dist
-                            closest_symbol = ref_symbol
-                    if closest_symbol is not None:
-                        demodulated_bits_ber.extend(inverse_mapping[closest_symbol])
-            ber = np.nan
-            if len(tx_bits) > 0:
-                ber = np.sum(np.array(tx_bits) != np.array(demodulated_bits_ber[:len(tx_bits)])) / len(tx_bits)
-            ber_values.append(ber)
+            
+            # Calculate BER for all noise realizations and average
+            ber_sum = np.mean([self.calculate_ber_for_snr(tx_bits, received_symbols_ber[i], mapping, inverse_mapping) for i in range(num_noise_realizations)])
+            ber_values.append(ber_sum)
 
         self.snr_ber_ax.clear()
         self.snr_ber_ax.semilogy(snr_db_range, ber_values, marker='o', linestyle='-')
@@ -871,23 +1034,70 @@ class QPSK_MIMO_GUI:
         self.snr_ber_ax.grid(True)
         self.snr_ber_canvas.draw()
 
-        # SNR vs Kapacitet plot
-        capacity_values = []
-        for current_snr_db in snr_db_range:
-            snr_linear = 10**(current_snr_db / 10)
-            if num_rx_antennas * num_modes > 0 and num_tx_antennas * num_modes > 0:
-                capacity = np.log2(det(np.eye(num_rx_antennas * num_modes) + (snr_linear / (num_tx_antennas * num_modes)) * np.dot(H, H.conj().T)))
-                capacity_values.append(capacity)
-            else:
-                capacity_values.append(np.nan)
+        # Number of Modes vs BER plot
+        num_modes_values = [1, 2, 3, 4]  # Different numbers of modes
+        fiber_lengths = [100, 500, 1000]  # Fixed fiber lengths in km
+        
+        self.modes_ber_ax.clear()
+        for fiber_length in fiber_lengths:
+            bits = np.random.randint(0, 2, int(self.num_bits_entry.get()))
+            ber_values = []
+            for num_modes in num_modes_values:
+                num_tx_modes = int(self.num_tx_ant_entry.get()) * num_modes
+                num_rx_modes = int(self.num_rx_ant_entry.get()) * num_modes
+                coupling_coeff = self.COUPLING_COEFF * np.sqrt(fiber_length / self.FIBER_LENGTH_SCALE)  # Non-linear scaling
+                dmd_coeff = self.DMD_COEFF * np.sqrt(fiber_length / self.FIBER_LENGTH_SCALE) # Non-linear scaling
+                
+                
+                mapping = {
+                    (0, 0): complex(1/np.sqrt(2), 1/np.sqrt(2)),  # 00 -> 1+j
+                    (0, 1): complex(-1/np.sqrt(2), 1/np.sqrt(2)), # 01 -> -1+j
+                    (1, 0): complex(1/np.sqrt(2), -1/np.sqrt(2)), # 10 -> 1-j
+                    (1, 1): complex(-1/np.sqrt(2), -1/np.sqrt(2))  # 11 -> -1-j
+                }
+                inverse_mapping = {v: k for k, v in mapping.items()}
+                
+                qpsk_symbols = []
+                tx_bits = []
+                for i in range(0, len(bits), 2):
+                    if i + 1 < len(bits):
+                        tx_bits.extend([bits[i], bits[i+1]])
+                        symbol = mapping[(bits[i], bits[i+1])]
+                        qpsk_symbols.append(symbol)
 
-        self.snr_capacity_ax.clear()
-        self.snr_capacity_ax.plot(snr_db_range, capacity_values, marker='o', linestyle='-')
-        self.snr_capacity_ax.set_xlabel('SNR (dB)')
-        self.snr_capacity_ax.set_ylabel('Kapacitet (bps/Hz)')
-        self.snr_capacity_ax.set_title('Ovisnost kapaciteta o SNR')
-        self.snr_capacity_ax.grid(True)
-        self.snr_capacity_canvas.draw()
+                qpsk_symbols = np.array(qpsk_symbols)
+                
+                tx_signals = np.zeros((num_tx_modes, len(qpsk_symbols)), dtype=complex)
+                for mode_idx in range(num_tx_modes):
+                    mode_bits = np.random.randint(0, 2, len(tx_bits))
+                    mode_qpsk_symbols = []
+                    for i in range(0, len(mode_bits), 2):
+                        if i + 1 < len(mode_bits):
+                            symbol = mapping[(mode_bits[i], mode_bits[i+1])]
+                            mode_qpsk_symbols.append(symbol)
+                    tx_signals[mode_idx, :] = np.array(mode_qpsk_symbols)
+                
+                # Generate channel matrix with correct dimensions
+                H = self.generate_channel_matrix(num_tx_modes, num_rx_modes, fiber_length, seed=42, coupling_coeff=coupling_coeff, dmd_coeff=dmd_coeff)
+                
+                rx_signals = np.dot(H, tx_signals)
+                signal_power = np.mean(np.abs(rx_signals)**2)
+                snr_db = float(self.snr_entry.get())
+                snr_linear = 10**(snr_db / 10)
+                noise_power = signal_power / snr_linear
+                noise_std = np.sqrt(noise_power / 2)
+                noise = noise_std * (np.random.randn(*rx_signals.shape) + 1j * np.random.randn(*rx_signals.shape))
+                received_symbols_ber = rx_signals + noise
+                ber = self.calculate_ber_for_snr(tx_bits, received_symbols_ber, mapping, inverse_mapping)
+                ber_values.append(ber)
+            self.modes_ber_ax.semilogy(num_modes_values, ber_values, marker='o', linestyle='-', label=f'{fiber_length} km')
+        
+        self.modes_ber_ax.set_xlabel('Broj modova')
+        self.modes_ber_ax.set_ylabel('BER')
+        self.modes_ber_ax.set_title('Ovisnost BER o broju modova')
+        self.modes_ber_ax.grid(True)
+        self.modes_ber_ax.legend()
+        self.modes_ber_canvas.draw()
 
         # Utjecaj šuma na signal
         self.noise_impact_ax_real.clear()
@@ -901,7 +1111,6 @@ class QPSK_MIMO_GUI:
             self.noise_impact_ax_real.plot(time, np.real(self.received_symbols[0, :]), label='Primljeni signal (I)')
             self.noise_impact_ax_real.set_ylabel('Amplituda')
             self.noise_impact_ax_real.set_title('Realne komponente')
-            self.noise_impact_ax_real.legend()
             self.noise_impact_ax_real.grid(True)
             
             # Plot imaginary components
@@ -911,39 +1120,46 @@ class QPSK_MIMO_GUI:
             self.noise_impact_ax_imag.set_xlabel('Vrijeme (uzorci)')
             self.noise_impact_ax_imag.set_ylabel('Amplituda')
             self.noise_impact_ax_imag.set_title('Imaginarne komponente')
-            self.noise_impact_ax_imag.legend()
             self.noise_impact_ax_imag.grid(True)
             
+            self.noise_impact_ax_real.legend()
+            self.noise_impact_ax_imag.legend()
             self.noise_impact_canvas.draw()
 
         # Eye Diagram
         self.eye_diagram_ax_before.clear()
         self.eye_diagram_ax_after.clear()
         if self.received_symbols.size > 0:
-            num_symbols_to_plot = min(self.received_symbols.shape[1], 2000)  # Increased for clarity
+            num_symbols_to_plot = min(self.received_symbols.shape[1], self.EYE_DIAGRAM_SYMBOLS)
             
             # Eye diagram before equalization
-            received_stream = self.received_symbols.flatten()
-            for i in range(0, len(received_stream) - 2 * int(self.num_tx_ant_entry.get()) * int(self.num_modes_entry.get()), int(self.num_tx_ant_entry.get()) * int(self.num_modes_entry.get())):
-                self.eye_diagram_ax_before.plot(np.real(received_stream[i:i + 2 * int(self.num_tx_ant_entry.get()) * int(self.num_modes_entry.get())]), color='b', alpha=0.1)
-            self.eye_diagram_ax_before.set_xlabel('Vrijeme (simboli)')
-            self.eye_diagram_ax_before.set_ylabel('Amplituda')
-            self.eye_diagram_ax_before.set_title('Eye Dijagram prije ekvalizacije')
-            self.eye_diagram_ax_before.grid(True)
+            num_rx_modes = int(self.num_rx_ant_entry.get()) * int(self.num_modes_entry.get())
+            if self.received_symbols.size > 0:
+                for mode_idx in range(num_rx_modes):
+                    received_stream = self.received_symbols[mode_idx, :]
+                    for i in range(0, len(received_stream) - 2, 1):
+                        self.eye_diagram_ax_before.plot(np.real(received_stream[i:i + 2]), color='b', alpha=0.1)
+                self.eye_diagram_ax_before.set_xlabel('Vrijeme (simboli)')
+                self.eye_diagram_ax_before.set_ylabel('Amplituda')
+                self.eye_diagram_ax_before.set_title('Eye Dijagram prije ekvalizacije')
+                self.eye_diagram_ax_before.grid(True)
 
             # Eye diagram after equalization
             if self.equalized_symbols.size > 0:
-                equalized_stream = self.equalized_symbols.flatten()
-                for i in range(0, len(equalized_stream) - 2 * int(self.num_tx_ant_entry.get()) * int(self.num_modes_entry.get()), int(self.num_tx_ant_entry.get()) * int(self.num_modes_entry.get())):
-                    self.eye_diagram_ax_after.plot(np.real(equalized_stream[i:i + 2 * int(self.num_tx_ant_entry.get()) * int(self.num_modes_entry.get())]), color='b', alpha=0.1)
+                for mode_idx in range(num_rx_modes):
+                    equalized_stream = self.equalized_symbols[mode_idx, :]
+                    for i in range(0, len(equalized_stream) - 2, 1):
+                        self.eye_diagram_ax_after.plot(np.real(equalized_stream[i:i + 2]), color='b', alpha=0.1)
                 self.eye_diagram_ax_after.set_xlabel('Vrijeme (simboli)')
                 self.eye_diagram_ax_after.set_ylabel('Amplituda')
                 self.eye_diagram_ax_after.set_title('Eye Dijagram poslije ekvalizacije')
                 self.eye_diagram_ax_after.grid(True)
         self.eye_diagram_canvas.draw()
-
+        
         # Detaljni prikaz vlakna
         self.create_fiber_propagation_plot(fiber_length, attenuation)
+        self.loading_label.pack_forget()
+        self.show_all_plots()
 
     ## @brief Kreira i prikazuje graf propagacije signala kroz vlakno.
     ## @param fiber_length Dužina vlakna u km.
@@ -957,15 +1173,23 @@ class QPSK_MIMO_GUI:
         @param attenuation Slabljenje vlakna u dB/km.
         @details Ova metoda kreira i prikazuje graf koji pokazuje snagu signala duž vlakna.
         """
+        ## @brief Kreira i prikazuje graf propagacije signala kroz vlakno.
+        ## @param fiber_length Dužina vlakna u km.
+        ## @param attenuation Slabljenje vlakna u dB/km.
+        ## @details Ova metoda kreira i prikazuje graf koji pokazuje snagu signala duž vlakna.
         self.detailed_fiber_ax.clear()
-        distance = np.linspace(0, fiber_length, 100)
-        attenuation_linear = 10**(-attenuation / 10)
-        signal_power_along_fiber = np.exp(-attenuation_linear * distance) # Simplified model
-
-        self.detailed_fiber_ax.plot(distance, signal_power_along_fiber, label='Snaga signala')
-        self.detailed_fiber_ax.set_xlabel('Duljina vlakna (km)')
-        self.detailed_fiber_ax.set_ylabel('Snaga signala (relativno)')
-        self.detailed_fiber_ax.set_title(f'Prikaz vlakna (Duljina: {fiber_length} km, Atenuacija: {attenuation} dB/km)')
+        num_points = max(self.FIBER_PROPAGATION_POINTS, int(fiber_length))  # Ensure at least FIBER_PROPAGATION_POINTS or fiber_length points
+        distance = np.linspace(0, fiber_length, num_points)
+        # Calculate signal power in dBm
+        signal_power_dbm = 10 * np.log10(1)  # Initial power is 1 mW (0 dBm)
+        
+        # Calculate signal power along the fiber
+        signal_power_dbm_along_fiber = signal_power_dbm - attenuation * distance
+        
+        self.detailed_fiber_ax.plot(distance, signal_power_dbm_along_fiber, label='Signal Power (dBm)')
+        self.detailed_fiber_ax.set_xlabel('Dužina vlakna (km)')
+        self.detailed_fiber_ax.set_ylabel('Snaga signala (dBm)')
+        self.detailed_fiber_ax.set_title(f'Prikaz vlakna (Dužina: {fiber_length} km, Slabljenje: {attenuation} dB/km)')
         self.detailed_fiber_ax.grid(True)
         self.detailed_fiber_ax.legend()
         self.detailed_fiber_canvas.draw()
@@ -978,14 +1202,13 @@ class QPSK_MIMO_GUI:
         
         @details Ova metoda kreira i prikazuje popup prozor koji sadrži unose matrice kanala.
         """
-        if self.channel_matrix_popup is not None:
-            self.channel_matrix_popup.destroy()
-        
+        ## @brief Prikazuje popup prozor sa matricom kanala.
+        ## @details Ova metoda kreira i prikazuje popup prozor koji sadrži unose matrice kanala.
         if self.channel_matrix_popup is not None:
             self.channel_matrix_popup.destroy()
         
         self.channel_matrix_popup = Toplevel(self.master)
-        self.channel_matrix_popup.title("Matrica kanala (H)")
+        self.channel_matrix_popup.title("Kanalna matrica (H)")
         
         matrix_frame = ttk.Frame(self.channel_matrix_popup)
         matrix_frame.pack(padx=10, pady=10)
@@ -1004,60 +1227,72 @@ class QPSK_MIMO_GUI:
             padding = np.zeros((num_rows, padding_cols))
             default_matrix = np.hstack((default_matrix, padding))
         
-        self.create_channel_matrix_entries(default_matrix.tolist(), matrix_frame)
-        
-        # Display matrix dimensions
-        matrix_label = ttk.Label(matrix_frame, text=f"Dimenzije matrice: [{num_rows}, {num_cols}]")
-        matrix_label.pack(pady=5)
+        self.create_channel_matrix_entries(default_matrix.tolist(), matrix_frame, self.channel_matrix_popup)
 
     ## @brief Kreira i prikazuje unose matrice kanala u popup prozoru.
     ## @param matrix Matrica kanala za prikaz.
     ## @param matrix_frame Okvir u kojem se prikazuju unosi matrice.
+    ## @param popup_window Prozor u kojem se prikazuju unosi matrice.
     ## @details Ova metoda kreira i prikazuje unose matrice kanala u popup prozoru, na osnovu date matrice i okvira.
-    def create_channel_matrix_entries(self, matrix, matrix_frame):
+    def create_channel_matrix_entries(self, matrix, matrix_frame, popup_window):
         """
         @brief Kreira i prikazuje unose matrice kanala u popup prozoru.
         
         @param matrix Matrica kanala za prikaz.
         @param matrix_frame Okvir u kojem se prikazuju unosi matrice.
+        @param popup_window Prozor u kojem se prikazuju unosi matrice.
         @details Ova metoda kreira i prikazuje unose matrice kanala u popup prozoru, na osnovu date matrice i okvira.
         """
+        ## @brief Kreira i prikazuje unose matrice kanala u popup prozoru.
+        ## @param matrix Matrica kanala za prikaz.
+        ## @param matrix_frame Okvir u kojem se prikazuju unosi matrice.
+        ## @param popup_window Prozor u kojem se prikazuju unosi matrice.
+        ## @details Ova metoda kreira i prikazuje unose matrice kanala u popup prozoru, na osnovu date matrice i okvira.
         # Clear existing entries
-        for entry_row in self.channel_matrix_entries:
-            for entry in entry_row:
-                entry.destroy()
-        self.channel_matrix_entries = []
+        if hasattr(popup_window, 'channel_matrix_entries'):
+            for entry_row in popup_window.channel_matrix_entries:
+                for entry in entry_row:
+                    entry.destroy()
+            popup_window.channel_matrix_entries = []
 
         # Create new entries
         if matrix_frame is not None:
             for i, row in enumerate(matrix):
                 entry_row = []
                 for j, value in enumerate(row):
-                    entry = ttk.Label(matrix_frame, text=str(int(value)), width=5)
+                    entry = ttk.Label(matrix_frame, text=f"{abs(value):.2f} ∠ {np.angle(value):.2f}", width=10)
+                    entry.complex_value = value
                     entry.grid(row=i, column=j, padx=1, pady=1)
                     entry_row.append(entry)
-                self.channel_matrix_entries.append(entry_row)
+                popup_window.channel_matrix_entries.append(entry_row)
 
     ## @brief Preuzima matricu kanala iz GUI unosa.
-    ## @return Matrica kanala kao NumPy niz, ili None ako dođe do greške.
+    ## @return Matrica kanala kao NumPy niz.
     ## @details Ova metoda preuzima matricu kanala iz GUI unosa i vraća je kao NumPy niz.
     def get_channel_matrix_from_entries(self):
         """
         @brief Preuzima matricu kanala iz GUI unosa.
         
-        @return Matrica kanala kao NumPy niz, ili None ako dođe do greške.
+        @return Matrica kanala kao NumPy niz.
         @details Ova metoda preuzima matricu kanala iz GUI unosa i vraća je kao NumPy niz.
         """
+        ## @brief Preuzima matricu kanala iz GUI unosa.
+        ## @return Matrica kanala kao NumPy niz.
+        ## @details Ova metoda preuzima matricu kanala iz GUI unosa i vraća je kao NumPy niz.
         matrix = []
-        for entry_row in self.channel_matrix_entries:
-            row = []
-            for entry in entry_row:
-                try:
-                    row.append(complex(entry.cget("text")))
-                except ValueError:
-                    messagebox.showerror("Greška", "Neispravan unos u matrici kanala.")
-                    return None
-            matrix.append(row)
+        if hasattr(self.channel_matrix_popup, 'channel_matrix_entries'):
+            for entry_row in self.channel_matrix_popup.channel_matrix_entries:
+                row = []
+                for entry in entry_row:
+                    try:
+                        text = entry.cget("text")
+                        parts = text.split("∠")
+                        mag = float(parts[0].strip())
+                        phase = float(parts[1].strip())
+                        row.append(complex(mag * np.cos(phase), mag * np.sin(phase)))
+                    except:
+                        row.append(0)
+                matrix.append(row)
         return np.array(matrix)
 
     ## @brief Ažurira stanje unosa matrice kanala (samo za čitanje ili uređivanje).
@@ -1068,15 +1303,12 @@ class QPSK_MIMO_GUI:
         
         @details Ova metoda ažurira stanje unosa matrice kanala na osnovu zastavice `channel_matrix_entry_readonly`. Ako je `channel_matrix_entry_readonly` True, unosi su postavljeni samo za čitanje, inače su postavljeni za uređivanje.
         """
-        if self.channel_matrix_entry_readonly:
-            for entry_row in self.channel_matrix_entries:
-                for entry in entry_row:
-                    entry.config(state=tk.DISABLED)
-        else:
-            for entry_row in self.channel_matrix_entries:
-                for entry in entry_row:
-                    entry.config(state=tk.NORMAL)
-
+        ## @brief Ažurira stanje unosa matrice kanala (samo za čitanje ili uređivanje).
+        ## @details Ova metoda ažurira stanje unosa matrice kanala na osnovu zastavice `channel_matrix_entry_readonly`. Ako je `channel_matrix_entry_readonly` True, unosi su postavljeni samo za čitanje, inače su postavljeni za uređivanje.
+        for entry_row in self.channel_matrix_entries:
+            for entry in entry_row:
+                entry.config(state=tk.DISABLED if self.channel_matrix_entry_readonly else tk.NORMAL)
+                
 if __name__ == "__main__":
     root = tk.Tk()
     gui = QPSK_MIMO_GUI(root)

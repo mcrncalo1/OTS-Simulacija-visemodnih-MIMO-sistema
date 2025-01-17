@@ -25,13 +25,15 @@
 var NAVTREE =
 [
   [ "Optički telekomunikacijski sistemi - Analiza i dizajn MIMO sistema zasnovanih na vlaknima sa više modova", "index.html", [
-    [ "Optički telekomunikacijski sistemi - Simulacija i analiza MIMO sistema zasnovanih na vlaknima s više modova", "md__r_e_a_d_m_e.html", null ],
+    [ "Optički telekomunikacijski sistemi - Simulacija i analiza MIMO sistema zasnovanih na vlaknima s više modova", "md_README.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ]
   ] ]
@@ -42,5 +44,5 @@ var NAVTREEINDEX =
 "annotated.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';
