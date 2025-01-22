@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['reset_5fsimulation_0',['reset_simulation',['../class_q_p_s_k___m_i_m_o_1_1_q_p_s_k___m_i_m_o___g_u_i.html#a8411c3242d3748fc90fd8751a53f550a',1,'QPSK_MIMO::QPSK_MIMO_GUI']]]
+  ['više_20modova_0',['Optički telekomunikacijski sistemi - Simulacija i analiza MIMO sistema zasnovanih na vlaknima s više modova',['../md_README.html',1,'']]],
+  ['vlaknima_1',['Gubici u Optičkim Vlaknima',['../md_README.html#autotoc_md3',1,'']]],
+  ['vlaknima_20s_20više_20modova_2',['Optički telekomunikacijski sistemi - Simulacija i analiza MIMO sistema zasnovanih na vlaknima s više modova',['../md_README.html',1,'']]]
 ];
